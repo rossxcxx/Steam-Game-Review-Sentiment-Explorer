@@ -1,0 +1,471 @@
+review_id,app_name,genre,review_text,voted_up,playtime_hours,review_date,helpful_votes
+1058,Nightfall Protocol,Action,"Good concept, but map design performance issues hold it back.",True,259.4,2026-06-27,207
+1331,Frostmarch Tactics,Strategy,"Devs clearly care about this game, matchmaking updates keep getting better.",True,191.6,2022-04-18,25
+1124,Stardrift Colony,Simulation,"Good concept, but multiplayer mode performance issues hold it back.",False,198.3,2022-11-18,61
+1242,Overpass Racer 2,Racing,"The graphics feels rushed and unfinished, not worth full price.",False,249.5,2026-04-29,159
+1075,Nightfall Protocol,Action,"Too many bugs, especially around map design. Needs major patches.",False,245.6,2026-03-19,60
+1455,Pixel Farm Story,Simulation,"Absolutely loved this game, the multiplayer mode is incredible and I can't stop playing.",True,171.2,2024-12-26,71
+1333,Frostmarch Tactics,Strategy,"Solid Strategy game overall, just wish the graphics was more polished.",False,195.3,2026-03-29,246
+1054,Cinderforge Legends,RPG,"Addictive gameplay loop, especially the soundtrack. Can't put it down.",True,165.7,2024-05-25,143
+1120,Stardrift Colony,Simulation,"Absolutely loved this game, the map design is incredible and I can't stop playing.",True,45.9,2026-07-20,144
+1299,Glass Labyrinth,Puzzle,"Great value for the price, the level design kept me hooked for hours.",True,94.1,2026-01-11,81
+1465,Pixel Farm Story,Simulation,"Addictive gameplay loop, especially the graphics. Can't put it down.",True,236.6,2025-10-29,195
+1350,Frostmarch Tactics,Strategy,Server issues make the voice acting nearly unplayable at times.,False,158.7,2024-01-11,19
+1140,Stardrift Colony,Simulation,"Addictive gameplay loop, especially the soundtrack. Can't put it down.",True,36.9,2025-07-14,155
+1320,Glass Labyrinth,Puzzle,"10/10 would recommend, the progression system alone is worth the purchase.",True,150.8,2025-06-06,235
+1014,Cinderforge Legends,RPG,Server issues make the multiplayer mode nearly unplayable at times.,False,119.0,2025-08-09,117
+1425,Sundered Realms Online,MMO,Best MMO game I've played in years. The voice acting really stands out.,True,33.3,2023-05-24,168
+1435,Pixel Farm Story,Simulation,"Great value for the price, the voice acting kept me hooked for hours.",True,56.3,2025-09-08,110
+1352,Frostmarch Tactics,Strategy,"Addictive gameplay loop, especially the multiplayer mode. Can't put it down.",True,27.7,2024-11-11,114
+1306,Glass Labyrinth,Puzzle,Server issues make the physics engine nearly unplayable at times.,False,86.1,2022-01-17,216
+1136,Stardrift Colony,Simulation,"Solid Simulation game overall, just wish the level design was more polished.",False,198.9,2024-03-31,208
+1180,Iron Vanguard,Shooter,"The boss fights feels rushed and unfinished, not worth full price.",False,265.7,2025-09-03,25
+1108,Stardrift Colony,Simulation,"Surprisingly polished for an indie title, controls feels top-notch.",True,239.5,2023-11-29,71
+1423,Sundered Realms Online,MMO,"Too many bugs, especially around voice acting. Needs major patches.",False,135.0,2025-05-09,122
+1214,Whisker Kingdoms,Indie,"Devs clearly care about this game, graphics updates keep getting better.",True,150.3,2025-09-30,206
+1230,Whisker Kingdoms,Indie,Best Indie game I've played in years. The combat system really stands out.,True,243.4,2023-12-05,182
+1053,Cinderforge Legends,RPG,"Solid RPG game overall, just wish the combat system was more polished.",False,13.7,2023-11-15,197
+1114,Stardrift Colony,Simulation,"The level design feels rushed and unfinished, not worth full price.",False,57.9,2026-02-21,123
+1178,Iron Vanguard,Shooter,"Absolutely loved this game, the graphics is incredible and I can't stop playing.",True,91.7,2024-10-05,29
+1099,Stardrift Colony,Simulation,"The physics engine is beautifully done, highly recommend to any Simulation fan.",True,32.9,2022-02-22,237
+1420,Sundered Realms Online,MMO,Server issues make the boss fights nearly unplayable at times.,False,282.9,2023-03-06,112
+1181,Iron Vanguard,Shooter,"Enjoyable at first, though map design becomes repetitive later on.",True,207.2,2023-03-21,113
+1287,Glass Labyrinth,Puzzle,"Disappointing follow-up, the storyline is worse than the previous game.",False,119.7,2026-01-08,184
+1237,Overpass Racer 2,Racing,"Surprisingly polished for an indie title, boss fights feels top-notch.",True,244.0,2025-10-04,179
+1417,Sundered Realms Online,MMO,"The controls feels rushed and unfinished, not worth full price.",False,289.4,2023-10-16,74
+1388,Sundered Realms Online,MMO,Server issues make the matchmaking nearly unplayable at times.,False,198.0,2022-02-02,1
+1309,Glass Labyrinth,Puzzle,"The controls is beautifully done, highly recommend to any Puzzle fan.",True,247.7,2025-06-30,174
+1055,Nightfall Protocol,Action,"Absolutely loved this game, the progression system is incredible and I can't stop playing.",True,250.5,2025-04-07,141
+1113,Stardrift Colony,Simulation,"The progression system is beautifully done, highly recommend to any Simulation fan.",True,92.3,2023-04-18,30
+1251,Overpass Racer 2,Racing,"10/10 would recommend, the level design alone is worth the purchase.",True,16.5,2024-10-25,95
+1192,Iron Vanguard,Shooter,"Disappointing follow-up, the progression system is worse than the previous game.",False,137.7,2022-03-05,15
+1185,Iron Vanguard,Shooter,"Pay-to-win mechanics ruin the combat system, avoid until fixed.",False,73.4,2022-09-15,201
+1183,Iron Vanguard,Shooter,"Absolutely loved this game, the matchmaking is incredible and I can't stop playing.",True,119.7,2023-01-24,247
+1049,Cinderforge Legends,RPG,"Devs clearly care about this game, level design updates keep getting better.",True,111.2,2022-11-20,112
+1239,Overpass Racer 2,Racing,"Addictive gameplay loop, especially the multiplayer mode. Can't put it down.",True,58.0,2022-10-09,39
+1147,Iron Vanguard,Shooter,"Addictive gameplay loop, especially the map design. Can't put it down.",True,259.6,2024-07-03,137
+1143,Stardrift Colony,Simulation,"The progression system is beautifully done, highly recommend to any Simulation fan.",True,124.9,2024-09-15,250
+1092,Stardrift Colony,Simulation,"Absolutely loved this game, the crafting system is incredible and I can't stop playing.",True,25.6,2024-05-27,34
+1097,Stardrift Colony,Simulation,Best Simulation game I've played in years. The graphics really stands out.,True,169.4,2023-03-23,119
+1446,Pixel Farm Story,Simulation,"10/10 would recommend, the graphics alone is worth the purchase.",True,289.2,2024-11-01,167
+1389,Sundered Realms Online,MMO,"Absolutely loved this game, the crafting system is incredible and I can't stop playing.",True,159.1,2023-07-17,137
+1399,Sundered Realms Online,MMO,"Solid MMO game overall, just wish the map design was more polished.",True,90.1,2025-02-28,61
+1157,Iron Vanguard,Shooter,"Too many bugs, especially around crafting system. Needs major patches.",False,133.4,2025-11-22,76
+1276,Glass Labyrinth,Puzzle,Unfortunately the voice acting is broken and ruins the whole experience.,False,38.3,2023-04-29,199
+1422,Sundered Realms Online,MMO,"The controls is beautifully done, highly recommend to any MMO fan.",True,73.0,2025-09-10,39
+1467,Pixel Farm Story,Simulation,"Great value for the price, the crafting system kept me hooked for hours.",True,264.7,2023-09-11,40
+1451,Pixel Farm Story,Simulation,The boss fights is fun but the physics engine needs work.,False,164.1,2024-05-20,26
+1340,Frostmarch Tactics,Strategy,"Pay-to-win mechanics ruin the combat system, avoid until fixed.",False,237.3,2025-03-08,172
+1169,Iron Vanguard,Shooter,"Absolutely loved this game, the voice acting is incredible and I can't stop playing.",True,174.1,2026-02-08,33
+1424,Sundered Realms Online,MMO,The boss fights is repetitive and gets boring after a few hours.,False,163.3,2026-06-08,247
+1101,Stardrift Colony,Simulation,"Constant crashes whenever I try physics engine, very frustrating.",False,31.0,2026-05-02,77
+1308,Glass Labyrinth,Puzzle,"Devs clearly care about this game, map design updates keep getting better.",True,109.1,2023-08-15,18
+1201,Whisker Kingdoms,Indie,Unfortunately the physics engine is broken and ruins the whole experience.,False,290.5,2025-05-14,79
+1112,Stardrift Colony,Simulation,"Pay-to-win mechanics ruin the level design, avoid until fixed.",False,127.9,2026-03-08,140
+1323,Frostmarch Tactics,Strategy,"The level design is beautifully done, highly recommend to any Strategy fan.",True,183.2,2023-01-29,245
+1221,Whisker Kingdoms,Indie,"Surprisingly polished for an indie title, multiplayer mode feels top-notch.",True,105.7,2025-08-14,208
+1249,Overpass Racer 2,Racing,"Enjoyable at first, though physics engine becomes repetitive later on.",True,229.1,2023-07-13,115
+1406,Sundered Realms Online,MMO,"Great value for the price, the graphics kept me hooked for hours.",True,222.0,2023-10-11,92
+1056,Nightfall Protocol,Action,"The graphics is beautifully done, highly recommend to any Action fan.",True,109.7,2026-06-19,248
+1076,Nightfall Protocol,Action,"Constant crashes whenever I try multiplayer mode, very frustrating.",False,44.6,2022-04-05,62
+1345,Frostmarch Tactics,Strategy,"Addictive gameplay loop, especially the matchmaking. Can't put it down.",True,92.4,2024-04-10,175
+1444,Pixel Farm Story,Simulation,"Great value for the price, the controls kept me hooked for hours.",True,166.7,2024-09-29,73
+1248,Overpass Racer 2,Racing,"Surprisingly polished for an indie title, matchmaking feels top-notch.",True,166.6,2022-07-30,182
+1093,Stardrift Colony,Simulation,"Enjoyable at first, though graphics becomes repetitive later on.",False,98.5,2024-07-20,83
+1010,Cinderforge Legends,RPG,Best RPG game I've played in years. The matchmaking really stands out.,True,182.9,2022-12-17,136
+1047,Cinderforge Legends,RPG,"Pay-to-win mechanics ruin the soundtrack, avoid until fixed.",False,278.7,2022-05-29,2
+1394,Sundered Realms Online,MMO,"10/10 would recommend, the crafting system alone is worth the purchase.",True,166.0,2022-04-25,163
+1025,Cinderforge Legends,RPG,Server issues make the storyline nearly unplayable at times.,False,244.9,2026-04-07,136
+1016,Cinderforge Legends,RPG,"The level design feels rushed and unfinished, not worth full price.",False,153.1,2022-07-06,193
+1272,Glass Labyrinth,Puzzle,"10/10 would recommend, the map design alone is worth the purchase.",True,50.4,2024-06-28,89
+1342,Frostmarch Tactics,Strategy,"Great value for the price, the matchmaking kept me hooked for hours.",True,294.5,2024-09-04,82
+1421,Sundered Realms Online,MMO,"Too many bugs, especially around physics engine. Needs major patches.",False,245.8,2026-06-18,203
+1409,Sundered Realms Online,MMO,Best MMO game I've played in years. The storyline really stands out.,True,179.3,2026-05-26,83
+1218,Whisker Kingdoms,Indie,"Enjoyable at first, though controls becomes repetitive later on.",True,131.3,2022-08-05,62
+1429,Pixel Farm Story,Simulation,"The map design feels rushed and unfinished, not worth full price.",False,103.8,2022-02-20,123
+1292,Glass Labyrinth,Puzzle,Best Puzzle game I've played in years. The boss fights really stands out.,True,75.6,2025-07-24,244
+1012,Cinderforge Legends,RPG,Unfortunately the matchmaking is broken and ruins the whole experience.,False,69.1,2022-03-07,206
+1305,Glass Labyrinth,Puzzle,"Surprisingly polished for an indie title, multiplayer mode feels top-notch.",True,15.1,2023-07-31,126
+1297,Glass Labyrinth,Puzzle,"Enjoyable at first, though boss fights becomes repetitive later on.",False,73.8,2026-07-12,175
+1430,Pixel Farm Story,Simulation,Best Simulation game I've played in years. The crafting system really stands out.,True,249.5,2026-02-04,36
+1121,Stardrift Colony,Simulation,The storyline is fun but the multiplayer mode needs work.,False,182.1,2026-06-08,158
+1286,Glass Labyrinth,Puzzle,"Addictive gameplay loop, especially the map design. Can't put it down.",True,241.2,2025-02-03,33
+1003,Cinderforge Legends,RPG,"The controls is beautifully done, highly recommend to any RPG fan.",True,242.9,2022-01-14,194
+1450,Pixel Farm Story,Simulation,Best Simulation game I've played in years. The boss fights really stands out.,True,80.7,2025-01-17,210
+1199,Whisker Kingdoms,Indie,"10/10 would recommend, the storyline alone is worth the purchase.",True,29.4,2026-02-22,95
+1150,Iron Vanguard,Shooter,"10/10 would recommend, the progression system alone is worth the purchase.",True,116.1,2025-09-21,202
+1086,Nightfall Protocol,Action,"10/10 would recommend, the multiplayer mode alone is worth the purchase.",True,122.6,2025-01-16,119
+1269,Glass Labyrinth,Puzzle,"Great value for the price, the crafting system kept me hooked for hours.",True,149.1,2024-10-15,94
+1065,Nightfall Protocol,Action,"Enjoyable at first, though graphics becomes repetitive later on.",True,33.0,2024-06-08,88
+1431,Pixel Farm Story,Simulation,"Devs clearly care about this game, level design updates keep getting better.",True,156.6,2023-12-15,121
+1387,Sundered Realms Online,MMO,"Devs clearly care about this game, graphics updates keep getting better.",True,152.0,2024-02-04,15
+1031,Cinderforge Legends,RPG,"Surprisingly polished for an indie title, storyline feels top-notch.",True,21.7,2023-05-03,71
+1091,Stardrift Colony,Simulation,"The voice acting feels rushed and unfinished, not worth full price.",False,252.2,2022-09-19,159
+1131,Stardrift Colony,Simulation,Server issues make the soundtrack nearly unplayable at times.,False,131.6,2025-05-09,10
+1018,Cinderforge Legends,RPG,"Addictive gameplay loop, especially the crafting system. Can't put it down.",True,159.0,2025-02-07,220
+1041,Cinderforge Legends,RPG,"Addictive gameplay loop, especially the crafting system. Can't put it down.",True,46.9,2023-08-31,55
+1164,Iron Vanguard,Shooter,The physics engine is fun but the controls needs work.,True,114.7,2024-01-06,147
+1296,Glass Labyrinth,Puzzle,The matchmaking is repetitive and gets boring after a few hours.,False,185.6,2022-03-04,127
+1379,Sundered Realms Online,MMO,"Solid MMO game overall, just wish the controls was more polished.",False,274.3,2024-01-30,80
+1313,Glass Labyrinth,Puzzle,"Enjoyable at first, though graphics becomes repetitive later on.",True,118.2,2025-06-16,189
+1090,Stardrift Colony,Simulation,"Enjoyable at first, though controls becomes repetitive later on.",False,145.9,2024-03-07,86
+1163,Iron Vanguard,Shooter,"The crafting system is beautifully done, highly recommend to any Shooter fan.",True,137.3,2023-09-11,50
+1191,Iron Vanguard,Shooter,Best Shooter game I've played in years. The voice acting really stands out.,True,135.9,2023-03-30,242
+1087,Nightfall Protocol,Action,"10/10 would recommend, the multiplayer mode alone is worth the purchase.",True,117.1,2026-04-26,149
+1103,Stardrift Colony,Simulation,"Surprisingly polished for an indie title, boss fights feels top-notch.",True,4.3,2024-05-10,210
+1339,Frostmarch Tactics,Strategy,"Great value for the price, the storyline kept me hooked for hours.",True,219.5,2025-08-20,65
+1166,Iron Vanguard,Shooter,"Absolutely loved this game, the map design is incredible and I can't stop playing.",True,273.2,2026-03-07,127
+1433,Pixel Farm Story,Simulation,"Enjoyable at first, though storyline becomes repetitive later on.",True,203.3,2022-12-03,238
+1413,Sundered Realms Online,MMO,Best MMO game I've played in years. The controls really stands out.,True,108.7,2023-05-21,184
+1149,Iron Vanguard,Shooter,"10/10 would recommend, the progression system alone is worth the purchase.",True,70.5,2026-05-08,105
+1193,Iron Vanguard,Shooter,"Solid Shooter game overall, just wish the physics engine was more polished.",True,147.3,2024-06-27,18
+1278,Glass Labyrinth,Puzzle,The level design is fun but the controls needs work.,True,159.1,2024-03-26,80
+1375,Sundered Realms Online,MMO,Server issues make the boss fights nearly unplayable at times.,False,63.1,2023-11-13,77
+1176,Iron Vanguard,Shooter,"Addictive gameplay loop, especially the matchmaking. Can't put it down.",True,8.0,2025-02-23,83
+1098,Stardrift Colony,Simulation,"The voice acting feels rushed and unfinished, not worth full price.",False,182.0,2026-03-12,183
+1364,Frostmarch Tactics,Strategy,"Absolutely loved this game, the matchmaking is incredible and I can't stop playing.",True,73.8,2022-04-01,102
+1224,Whisker Kingdoms,Indie,"Addictive gameplay loop, especially the map design. Can't put it down.",True,204.5,2025-03-02,164
+1427,Sundered Realms Online,MMO,The voice acting is repetitive and gets boring after a few hours.,False,32.2,2022-07-21,66
+1228,Whisker Kingdoms,Indie,The physics engine is repetitive and gets boring after a few hours.,False,139.1,2025-02-09,244
+1202,Whisker Kingdoms,Indie,"Devs clearly care about this game, map design updates keep getting better.",True,46.8,2024-09-14,57
+1152,Iron Vanguard,Shooter,"Solid Shooter game overall, just wish the physics engine was more polished.",True,158.0,2024-07-24,3
+1217,Whisker Kingdoms,Indie,"Absolutely loved this game, the storyline is incredible and I can't stop playing.",True,289.9,2022-12-18,205
+1459,Pixel Farm Story,Simulation,"Solid Simulation game overall, just wish the voice acting was more polished.",False,43.1,2025-07-19,68
+1322,Glass Labyrinth,Puzzle,The matchmaking is repetitive and gets boring after a few hours.,False,94.5,2022-12-21,117
+1174,Iron Vanguard,Shooter,"Absolutely loved this game, the voice acting is incredible and I can't stop playing.",True,79.7,2022-09-11,116
+1277,Glass Labyrinth,Puzzle,Unfortunately the level design is broken and ruins the whole experience.,False,181.7,2025-10-22,115
+1384,Sundered Realms Online,MMO,"Surprisingly polished for an indie title, graphics feels top-notch.",True,51.2,2026-01-15,139
+1156,Iron Vanguard,Shooter,The combat system is fun but the map design needs work.,True,189.5,2023-08-12,58
+1207,Whisker Kingdoms,Indie,"Great value for the price, the controls kept me hooked for hours.",True,111.3,2026-01-17,83
+1378,Sundered Realms Online,MMO,"Pay-to-win mechanics ruin the crafting system, avoid until fixed.",False,92.9,2024-01-07,131
+1165,Iron Vanguard,Shooter,"Absolutely loved this game, the progression system is incredible and I can't stop playing.",True,293.4,2025-09-10,101
+1250,Overpass Racer 2,Racing,"Solid Racing game overall, just wish the graphics was more polished.",True,284.0,2023-03-31,209
+1458,Pixel Farm Story,Simulation,"Good concept, but soundtrack performance issues hold it back.",True,75.3,2025-12-27,82
+1236,Overpass Racer 2,Racing,"10/10 would recommend, the level design alone is worth the purchase.",True,39.1,2025-12-22,240
+1213,Whisker Kingdoms,Indie,"Surprisingly polished for an indie title, soundtrack feels top-notch.",True,36.4,2024-10-15,191
+1155,Iron Vanguard,Shooter,"Pay-to-win mechanics ruin the boss fights, avoid until fixed.",False,188.2,2026-04-05,124
+1280,Glass Labyrinth,Puzzle,"The boss fights is beautifully done, highly recommend to any Puzzle fan.",True,232.6,2025-12-12,114
+1066,Nightfall Protocol,Action,"Too many bugs, especially around level design. Needs major patches.",False,115.9,2025-03-26,48
+1206,Whisker Kingdoms,Indie,Unfortunately the storyline is broken and ruins the whole experience.,False,28.0,2024-12-22,55
+1173,Iron Vanguard,Shooter,"10/10 would recommend, the voice acting alone is worth the purchase.",True,290.2,2026-07-06,142
+1419,Sundered Realms Online,MMO,"Constant crashes whenever I try level design, very frustrating.",False,177.9,2025-01-22,46
+1405,Sundered Realms Online,MMO,"Disappointing follow-up, the storyline is worse than the previous game.",False,239.5,2025-12-31,18
+1170,Iron Vanguard,Shooter,"10/10 would recommend, the soundtrack alone is worth the purchase.",True,53.1,2022-09-28,201
+1382,Sundered Realms Online,MMO,"Devs clearly care about this game, map design updates keep getting better.",True,150.0,2025-09-02,241
+1366,Frostmarch Tactics,Strategy,"Enjoyable at first, though progression system becomes repetitive later on.",False,71.5,2022-10-21,169
+1231,Overpass Racer 2,Racing,"Devs clearly care about this game, graphics updates keep getting better.",True,212.4,2024-06-18,134
+1100,Stardrift Colony,Simulation,"10/10 would recommend, the matchmaking alone is worth the purchase.",True,282.5,2023-02-11,19
+1343,Frostmarch Tactics,Strategy,"Solid Strategy game overall, just wish the combat system was more polished.",True,134.3,2023-07-01,244
+1129,Stardrift Colony,Simulation,The physics engine is fun but the graphics needs work.,True,50.2,2023-09-22,152
+1024,Cinderforge Legends,RPG,"The physics engine is beautifully done, highly recommend to any RPG fan.",True,72.2,2023-05-09,224
+1148,Iron Vanguard,Shooter,"10/10 would recommend, the level design alone is worth the purchase.",True,136.9,2023-10-22,222
+1021,Cinderforge Legends,RPG,The voice acting is fun but the graphics needs work.,False,252.6,2024-11-05,155
+1442,Pixel Farm Story,Simulation,"Constant crashes whenever I try level design, very frustrating.",False,92.0,2023-01-10,95
+1229,Whisker Kingdoms,Indie,"Constant crashes whenever I try combat system, very frustrating.",False,96.8,2024-09-01,128
+1377,Sundered Realms Online,MMO,"Good concept, but progression system performance issues hold it back.",False,274.6,2025-02-04,82
+1133,Stardrift Colony,Simulation,"Enjoyable at first, though map design becomes repetitive later on.",True,229.1,2022-12-25,120
+1194,Whisker Kingdoms,Indie,"Great value for the price, the graphics kept me hooked for hours.",True,82.9,2025-07-20,149
+1220,Whisker Kingdoms,Indie,"Great value for the price, the level design kept me hooked for hours.",True,23.4,2025-07-20,29
+1258,Overpass Racer 2,Racing,"Devs clearly care about this game, matchmaking updates keep getting better.",True,215.7,2023-08-20,109
+1393,Sundered Realms Online,MMO,Best MMO game I've played in years. The physics engine really stands out.,True,196.3,2025-08-23,194
+1466,Pixel Farm Story,Simulation,"Addictive gameplay loop, especially the storyline. Can't put it down.",True,5.4,2022-11-20,112
+1284,Glass Labyrinth,Puzzle,"Great value for the price, the graphics kept me hooked for hours.",True,238.2,2024-11-07,57
+1336,Frostmarch Tactics,Strategy,"Solid Strategy game overall, just wish the graphics was more polished.",False,56.3,2026-03-14,246
+1257,Overpass Racer 2,Racing,"Addictive gameplay loop, especially the matchmaking. Can't put it down.",True,19.3,2024-10-20,152
+1285,Glass Labyrinth,Puzzle,"Great value for the price, the multiplayer mode kept me hooked for hours.",True,71.4,2024-10-08,6
+1135,Stardrift Colony,Simulation,"Enjoyable at first, though storyline becomes repetitive later on.",False,100.3,2025-10-04,26
+1266,Overpass Racer 2,Racing,"The combat system is beautifully done, highly recommend to any Racing fan.",True,154.9,2026-07-28,139
+1026,Cinderforge Legends,RPG,Server issues make the graphics nearly unplayable at times.,False,284.1,2022-12-05,67
+1324,Frostmarch Tactics,Strategy,"Devs clearly care about this game, boss fights updates keep getting better.",True,282.5,2023-09-02,197
+1398,Sundered Realms Online,MMO,"Great value for the price, the matchmaking kept me hooked for hours.",True,278.7,2023-10-07,4
+1168,Iron Vanguard,Shooter,"Great value for the price, the voice acting kept me hooked for hours.",True,188.7,2025-07-09,165
+1464,Pixel Farm Story,Simulation,"Solid Simulation game overall, just wish the physics engine was more polished.",False,97.2,2023-08-04,86
+1359,Frostmarch Tactics,Strategy,"Great value for the price, the boss fights kept me hooked for hours.",True,218.5,2023-04-02,213
+1209,Whisker Kingdoms,Indie,"Too many bugs, especially around combat system. Needs major patches.",False,82.0,2025-09-17,108
+1293,Glass Labyrinth,Puzzle,"Disappointing follow-up, the graphics is worse than the previous game.",False,184.5,2022-07-11,128
+1452,Pixel Farm Story,Simulation,"Constant crashes whenever I try matchmaking, very frustrating.",False,89.7,2022-03-08,115
+1456,Pixel Farm Story,Simulation,"Disappointing follow-up, the graphics is worse than the previous game.",False,87.2,2023-07-02,243
+1138,Stardrift Colony,Simulation,The crafting system is fun but the physics engine needs work.,False,124.3,2023-01-20,132
+1376,Sundered Realms Online,MMO,"Good concept, but combat system performance issues hold it back.",True,224.2,2026-03-25,122
+1263,Overpass Racer 2,Racing,"Surprisingly polished for an indie title, combat system feels top-notch.",True,244.1,2022-12-25,212
+1318,Glass Labyrinth,Puzzle,The map design is repetitive and gets boring after a few hours.,False,44.8,2025-10-26,62
+1262,Overpass Racer 2,Racing,Best Racing game I've played in years. The matchmaking really stands out.,True,231.6,2026-02-14,193
+1367,Frostmarch Tactics,Strategy,"The crafting system is beautifully done, highly recommend to any Strategy fan.",True,18.8,2025-04-26,225
+1204,Whisker Kingdoms,Indie,The physics engine is fun but the boss fights needs work.,False,9.2,2023-07-14,179
+1281,Glass Labyrinth,Puzzle,"Addictive gameplay loop, especially the map design. Can't put it down.",True,60.5,2022-10-05,218
+1407,Sundered Realms Online,MMO,"Addictive gameplay loop, especially the combat system. Can't put it down.",True,108.3,2023-07-07,26
+1050,Cinderforge Legends,RPG,The progression system is fun but the soundtrack needs work.,False,279.6,2022-08-01,240
+1392,Sundered Realms Online,MMO,"Addictive gameplay loop, especially the level design. Can't put it down.",True,169.7,2025-11-28,57
+1371,Frostmarch Tactics,Strategy,"Great value for the price, the multiplayer mode kept me hooked for hours.",True,241.8,2022-04-29,143
+1208,Whisker Kingdoms,Indie,"Too many bugs, especially around map design. Needs major patches.",False,265.1,2022-11-15,40
+1118,Stardrift Colony,Simulation,The controls is fun but the storyline needs work.,False,141.1,2024-06-21,87
+1062,Nightfall Protocol,Action,"Devs clearly care about this game, soundtrack updates keep getting better.",True,67.3,2025-09-13,49
+1159,Iron Vanguard,Shooter,"Great value for the price, the crafting system kept me hooked for hours.",True,51.4,2022-06-11,156
+1243,Overpass Racer 2,Racing,"Solid Racing game overall, just wish the graphics was more polished.",True,123.6,2025-10-17,184
+1410,Sundered Realms Online,MMO,"Solid MMO game overall, just wish the combat system was more polished.",False,233.9,2026-01-24,230
+1314,Glass Labyrinth,Puzzle,"Solid Puzzle game overall, just wish the map design was more polished.",False,142.7,2022-02-04,94
+1144,Iron Vanguard,Shooter,"10/10 would recommend, the boss fights alone is worth the purchase.",True,57.6,2025-05-12,130
+1074,Nightfall Protocol,Action,"Great value for the price, the controls kept me hooked for hours.",True,197.8,2023-08-05,131
+1403,Sundered Realms Online,MMO,"Enjoyable at first, though crafting system becomes repetitive later on.",True,190.4,2026-05-24,115
+1094,Stardrift Colony,Simulation,"10/10 would recommend, the crafting system alone is worth the purchase.",True,76.1,2022-06-17,120
+1002,Cinderforge Legends,RPG,"Devs clearly care about this game, map design updates keep getting better.",True,214.9,2025-12-07,139
+1381,Sundered Realms Online,MMO,The map design is repetitive and gets boring after a few hours.,False,88.9,2023-02-06,84
+1247,Overpass Racer 2,Racing,"Devs clearly care about this game, crafting system updates keep getting better.",True,240.5,2022-10-11,223
+1316,Glass Labyrinth,Puzzle,Server issues make the combat system nearly unplayable at times.,False,80.0,2025-09-04,200
+1295,Glass Labyrinth,Puzzle,The level design is fun but the physics engine needs work.,True,24.8,2025-08-06,197
+1317,Glass Labyrinth,Puzzle,"Good concept, but map design performance issues hold it back.",True,175.3,2022-12-16,134
+1354,Frostmarch Tactics,Strategy,Unfortunately the soundtrack is broken and ruins the whole experience.,False,119.1,2026-07-31,0
+1072,Nightfall Protocol,Action,Unfortunately the crafting system is broken and ruins the whole experience.,False,91.5,2023-03-07,110
+1119,Stardrift Colony,Simulation,"Addictive gameplay loop, especially the combat system. Can't put it down.",True,34.7,2022-05-14,102
+1017,Cinderforge Legends,RPG,"Great value for the price, the storyline kept me hooked for hours.",True,237.7,2024-05-14,152
+1102,Stardrift Colony,Simulation,The map design is fun but the voice acting needs work.,True,104.5,2024-05-27,169
+1011,Cinderforge Legends,RPG,The graphics is repetitive and gets boring after a few hours.,False,81.3,2025-08-03,176
+1290,Glass Labyrinth,Puzzle,"Good concept, but voice acting performance issues hold it back.",True,130.1,2022-04-24,212
+1246,Overpass Racer 2,Racing,Server issues make the map design nearly unplayable at times.,False,230.9,2026-05-13,97
+1240,Overpass Racer 2,Racing,Best Racing game I've played in years. The physics engine really stands out.,True,152.6,2025-01-10,213
+1252,Overpass Racer 2,Racing,"Devs clearly care about this game, storyline updates keep getting better.",True,8.9,2022-07-22,214
+1380,Sundered Realms Online,MMO,"Devs clearly care about this game, map design updates keep getting better.",True,222.5,2022-02-03,66
+1172,Iron Vanguard,Shooter,"Enjoyable at first, though controls becomes repetitive later on.",False,241.4,2024-08-17,246
+1128,Stardrift Colony,Simulation,"Too many bugs, especially around multiplayer mode. Needs major patches.",False,163.6,2025-08-19,38
+1338,Frostmarch Tactics,Strategy,"Solid Strategy game overall, just wish the soundtrack was more polished.",True,255.4,2024-08-16,69
+1095,Stardrift Colony,Simulation,"Surprisingly polished for an indie title, boss fights feels top-notch.",True,67.7,2022-05-21,199
+1468,Pixel Farm Story,Simulation,"Enjoyable at first, though soundtrack becomes repetitive later on.",False,25.2,2025-09-22,231
+1019,Cinderforge Legends,RPG,The matchmaking is fun but the progression system needs work.,False,230.7,2023-11-28,28
+1211,Whisker Kingdoms,Indie,"Addictive gameplay loop, especially the storyline. Can't put it down.",True,158.3,2023-09-24,11
+1069,Nightfall Protocol,Action,"Pay-to-win mechanics ruin the level design, avoid until fixed.",False,199.2,2022-09-13,184
+1081,Nightfall Protocol,Action,"Surprisingly polished for an indie title, controls feels top-notch.",True,285.0,2024-06-25,156
+1273,Glass Labyrinth,Puzzle,"Surprisingly polished for an indie title, progression system feels top-notch.",True,184.6,2024-06-09,70
+1234,Overpass Racer 2,Racing,"10/10 would recommend, the storyline alone is worth the purchase.",True,85.6,2026-01-22,218
+1106,Stardrift Colony,Simulation,Best Simulation game I've played in years. The physics engine really stands out.,True,84.0,2024-07-12,62
+1400,Sundered Realms Online,MMO,"Pay-to-win mechanics ruin the physics engine, avoid until fixed.",False,115.5,2026-02-23,35
+1082,Nightfall Protocol,Action,"Solid Action game overall, just wish the boss fights was more polished.",True,223.2,2024-08-30,115
+1365,Frostmarch Tactics,Strategy,"Absolutely loved this game, the boss fights is incredible and I can't stop playing.",True,42.5,2023-08-16,59
+1107,Stardrift Colony,Simulation,The map design is repetitive and gets boring after a few hours.,False,101.3,2024-10-09,217
+1325,Frostmarch Tactics,Strategy,"Addictive gameplay loop, especially the multiplayer mode. Can't put it down.",True,95.5,2023-12-16,143
+1189,Iron Vanguard,Shooter,"Devs clearly care about this game, voice acting updates keep getting better.",True,176.9,2022-02-02,44
+1182,Iron Vanguard,Shooter,"Surprisingly polished for an indie title, multiplayer mode feels top-notch.",True,30.3,2025-11-05,94
+1362,Frostmarch Tactics,Strategy,Best Strategy game I've played in years. The progression system really stands out.,True,10.1,2025-09-14,107
+1370,Frostmarch Tactics,Strategy,"10/10 would recommend, the graphics alone is worth the purchase.",True,55.6,2025-01-06,121
+1391,Sundered Realms Online,MMO,"The multiplayer mode is beautifully done, highly recommend to any MMO fan.",True,244.7,2023-07-02,203
+1009,Cinderforge Legends,RPG,"Great value for the price, the physics engine kept me hooked for hours.",True,111.4,2023-03-06,171
+1282,Glass Labyrinth,Puzzle,"Addictive gameplay loop, especially the graphics. Can't put it down.",True,299.2,2026-07-18,174
+1245,Overpass Racer 2,Racing,"Addictive gameplay loop, especially the multiplayer mode. Can't put it down.",True,271.2,2023-02-02,94
+1238,Overpass Racer 2,Racing,The progression system is fun but the matchmaking needs work.,False,152.8,2022-02-07,92
+1448,Pixel Farm Story,Simulation,"Devs clearly care about this game, map design updates keep getting better.",True,88.0,2023-07-17,57
+1038,Cinderforge Legends,RPG,"Absolutely loved this game, the boss fights is incredible and I can't stop playing.",True,290.7,2026-03-24,217
+1235,Overpass Racer 2,Racing,"The map design feels rushed and unfinished, not worth full price.",False,100.3,2025-04-08,169
+1397,Sundered Realms Online,MMO,"Too many bugs, especially around soundtrack. Needs major patches.",False,205.5,2023-07-29,230
+1186,Iron Vanguard,Shooter,"Constant crashes whenever I try storyline, very frustrating.",False,176.1,2026-07-24,222
+1347,Frostmarch Tactics,Strategy,"Good concept, but level design performance issues hold it back.",True,287.2,2024-09-06,39
+1023,Cinderforge Legends,RPG,"Surprisingly polished for an indie title, combat system feels top-notch.",True,146.8,2022-08-18,237
+1401,Sundered Realms Online,MMO,"Too many bugs, especially around progression system. Needs major patches.",False,150.5,2023-12-10,13
+1298,Glass Labyrinth,Puzzle,"Absolutely loved this game, the controls is incredible and I can't stop playing.",True,47.8,2024-05-01,123
+1022,Cinderforge Legends,RPG,"Great value for the price, the level design kept me hooked for hours.",True,162.0,2026-05-14,236
+1001,Cinderforge Legends,RPG,The boss fights is repetitive and gets boring after a few hours.,False,10.0,2022-07-11,55
+1439,Pixel Farm Story,Simulation,"Addictive gameplay loop, especially the matchmaking. Can't put it down.",True,158.6,2025-08-01,80
+1116,Stardrift Colony,Simulation,"Absolutely loved this game, the graphics is incredible and I can't stop playing.",True,212.6,2022-09-17,70
+1361,Frostmarch Tactics,Strategy,"Devs clearly care about this game, physics engine updates keep getting better.",True,138.5,2022-11-14,70
+1436,Pixel Farm Story,Simulation,"Devs clearly care about this game, progression system updates keep getting better.",True,135.1,2024-05-29,99
+1130,Stardrift Colony,Simulation,Server issues make the map design nearly unplayable at times.,False,37.7,2025-11-11,77
+1080,Nightfall Protocol,Action,"Solid Action game overall, just wish the progression system was more polished.",True,167.4,2022-09-06,116
+1434,Pixel Farm Story,Simulation,"Good concept, but multiplayer mode performance issues hold it back.",True,99.6,2024-05-23,245
+1289,Glass Labyrinth,Puzzle,"Solid Puzzle game overall, just wish the matchmaking was more polished.",False,204.2,2023-12-07,32
+1363,Frostmarch Tactics,Strategy,"Constant crashes whenever I try combat system, very frustrating.",False,20.7,2025-05-01,8
+1302,Glass Labyrinth,Puzzle,"10/10 would recommend, the combat system alone is worth the purchase.",True,259.3,2024-05-06,63
+1357,Frostmarch Tactics,Strategy,The voice acting is repetitive and gets boring after a few hours.,False,112.7,2024-02-23,114
+1319,Glass Labyrinth,Puzzle,"Devs clearly care about this game, progression system updates keep getting better.",True,6.2,2023-10-05,107
+1233,Overpass Racer 2,Racing,Unfortunately the matchmaking is broken and ruins the whole experience.,False,236.9,2025-08-18,85
+1294,Glass Labyrinth,Puzzle,"The map design feels rushed and unfinished, not worth full price.",False,51.8,2025-07-02,184
+1461,Pixel Farm Story,Simulation,"Surprisingly polished for an indie title, progression system feels top-notch.",True,136.7,2024-09-26,83
+1341,Frostmarch Tactics,Strategy,The graphics is repetitive and gets boring after a few hours.,False,248.2,2024-11-21,83
+1032,Cinderforge Legends,RPG,"The multiplayer mode feels rushed and unfinished, not worth full price.",False,217.1,2025-03-15,147
+1268,Glass Labyrinth,Puzzle,"Surprisingly polished for an indie title, storyline feels top-notch.",True,131.4,2024-03-30,190
+1139,Stardrift Colony,Simulation,"Addictive gameplay loop, especially the voice acting. Can't put it down.",True,228.1,2023-02-21,68
+1395,Sundered Realms Online,MMO,"Addictive gameplay loop, especially the graphics. Can't put it down.",True,253.7,2025-08-13,200
+1171,Iron Vanguard,Shooter,"The level design is beautifully done, highly recommend to any Shooter fan.",True,249.2,2023-06-11,233
+1015,Cinderforge Legends,RPG,"The graphics is beautifully done, highly recommend to any RPG fan.",True,224.2,2024-05-27,229
+1060,Nightfall Protocol,Action,"Good concept, but voice acting performance issues hold it back.",False,48.2,2025-12-07,27
+1137,Stardrift Colony,Simulation,"Too many bugs, especially around combat system. Needs major patches.",False,94.7,2023-10-25,29
+1064,Nightfall Protocol,Action,"Pay-to-win mechanics ruin the crafting system, avoid until fixed.",False,281.8,2022-08-25,224
+1190,Iron Vanguard,Shooter,"10/10 would recommend, the graphics alone is worth the purchase.",True,158.1,2026-03-08,16
+1085,Nightfall Protocol,Action,"Great value for the price, the boss fights kept me hooked for hours.",True,45.7,2024-02-24,177
+1132,Stardrift Colony,Simulation,"Enjoyable at first, though progression system becomes repetitive later on.",True,27.9,2025-10-12,214
+1264,Overpass Racer 2,Racing,Server issues make the controls nearly unplayable at times.,False,189.7,2026-07-20,34
+1267,Overpass Racer 2,Racing,"Devs clearly care about this game, combat system updates keep getting better.",True,86.2,2026-05-19,12
+1177,Iron Vanguard,Shooter,The multiplayer mode is fun but the matchmaking needs work.,False,272.9,2023-09-11,166
+1254,Overpass Racer 2,Racing,"Good concept, but progression system performance issues hold it back.",False,134.9,2022-01-11,231
+1083,Nightfall Protocol,Action,"The multiplayer mode is beautifully done, highly recommend to any Action fan.",True,229.9,2024-12-03,124
+1005,Cinderforge Legends,RPG,"Surprisingly polished for an indie title, crafting system feels top-notch.",True,254.3,2025-05-21,67
+1432,Pixel Farm Story,Simulation,"Addictive gameplay loop, especially the progression system. Can't put it down.",True,96.0,2023-09-07,11
+1358,Frostmarch Tactics,Strategy,The crafting system is fun but the crafting system needs work.,True,196.2,2023-12-14,30
+1449,Pixel Farm Story,Simulation,"Addictive gameplay loop, especially the graphics. Can't put it down.",True,169.9,2026-05-02,196
+1089,Nightfall Protocol,Action,The physics engine is repetitive and gets boring after a few hours.,False,161.7,2026-02-13,139
+1411,Sundered Realms Online,MMO,"The multiplayer mode feels rushed and unfinished, not worth full price.",False,205.8,2022-12-14,35
+1028,Cinderforge Legends,RPG,The progression system is repetitive and gets boring after a few hours.,False,298.5,2025-08-23,95
+1232,Overpass Racer 2,Racing,"Surprisingly polished for an indie title, graphics feels top-notch.",True,275.4,2024-03-04,104
+1059,Nightfall Protocol,Action,"Great value for the price, the crafting system kept me hooked for hours.",True,221.1,2023-11-12,200
+1222,Whisker Kingdoms,Indie,"The storyline is beautifully done, highly recommend to any Indie fan.",True,59.6,2025-05-18,39
+1404,Sundered Realms Online,MMO,"10/10 would recommend, the level design alone is worth the purchase.",True,129.8,2025-10-24,149
+1125,Stardrift Colony,Simulation,"Absolutely loved this game, the storyline is incredible and I can't stop playing.",True,122.9,2025-11-12,152
+1029,Cinderforge Legends,RPG,Best RPG game I've played in years. The boss fights really stands out.,True,74.7,2022-05-12,86
+1368,Frostmarch Tactics,Strategy,The graphics is repetitive and gets boring after a few hours.,False,167.0,2022-04-07,248
+1223,Whisker Kingdoms,Indie,"The matchmaking feels rushed and unfinished, not worth full price.",False,285.4,2025-07-10,126
+1334,Frostmarch Tactics,Strategy,"Absolutely loved this game, the soundtrack is incredible and I can't stop playing.",True,272.4,2022-07-03,166
+1033,Cinderforge Legends,RPG,"10/10 would recommend, the voice acting alone is worth the purchase.",True,57.5,2022-07-18,168
+1344,Frostmarch Tactics,Strategy,"Absolutely loved this game, the map design is incredible and I can't stop playing.",True,78.8,2024-01-07,177
+1372,Frostmarch Tactics,Strategy,"Great value for the price, the crafting system kept me hooked for hours.",True,116.8,2023-06-07,52
+1167,Iron Vanguard,Shooter,"Good concept, but soundtrack performance issues hold it back.",False,66.1,2023-01-25,158
+1426,Sundered Realms Online,MMO,Unfortunately the graphics is broken and ruins the whole experience.,False,169.2,2025-08-14,173
+1079,Nightfall Protocol,Action,"Too many bugs, especially around voice acting. Needs major patches.",False,233.6,2023-03-25,45
+1104,Stardrift Colony,Simulation,"Addictive gameplay loop, especially the crafting system. Can't put it down.",True,212.3,2024-06-10,45
+1261,Overpass Racer 2,Racing,Unfortunately the level design is broken and ruins the whole experience.,False,107.4,2022-05-19,88
+1040,Cinderforge Legends,RPG,"10/10 would recommend, the crafting system alone is worth the purchase.",True,79.9,2026-05-25,200
+1158,Iron Vanguard,Shooter,The combat system is fun but the level design needs work.,False,107.9,2024-06-01,37
+1329,Frostmarch Tactics,Strategy,"Devs clearly care about this game, controls updates keep getting better.",True,248.5,2023-07-10,238
+1142,Stardrift Colony,Simulation,"Addictive gameplay loop, especially the physics engine. Can't put it down.",True,284.1,2025-08-19,213
+1078,Nightfall Protocol,Action,"Addictive gameplay loop, especially the progression system. Can't put it down.",True,120.2,2022-10-30,167
+1408,Sundered Realms Online,MMO,"Addictive gameplay loop, especially the graphics. Can't put it down.",True,167.3,2024-11-15,104
+1275,Glass Labyrinth,Puzzle,"Great value for the price, the progression system kept me hooked for hours.",True,285.9,2022-10-20,217
+1274,Glass Labyrinth,Puzzle,"Too many bugs, especially around voice acting. Needs major patches.",False,201.5,2024-04-11,93
+1327,Frostmarch Tactics,Strategy,"Surprisingly polished for an indie title, crafting system feels top-notch.",True,286.4,2026-07-06,37
+1042,Cinderforge Legends,RPG,The map design is fun but the progression system needs work.,False,17.6,2025-04-11,122
+1205,Whisker Kingdoms,Indie,Unfortunately the level design is broken and ruins the whole experience.,False,54.8,2022-10-21,144
+1447,Pixel Farm Story,Simulation,"10/10 would recommend, the matchmaking alone is worth the purchase.",True,213.2,2024-06-28,125
+1212,Whisker Kingdoms,Indie,"Absolutely loved this game, the map design is incredible and I can't stop playing.",True,61.7,2023-03-09,196
+1256,Overpass Racer 2,Racing,"The storyline is beautifully done, highly recommend to any Racing fan.",True,71.7,2022-09-07,12
+1438,Pixel Farm Story,Simulation,"Great value for the price, the storyline kept me hooked for hours.",True,110.1,2023-02-08,117
+1146,Iron Vanguard,Shooter,"The voice acting is beautifully done, highly recommend to any Shooter fan.",True,246.3,2023-08-03,185
+1259,Overpass Racer 2,Racing,"10/10 would recommend, the level design alone is worth the purchase.",True,56.6,2025-09-30,21
+1203,Whisker Kingdoms,Indie,"Enjoyable at first, though level design becomes repetitive later on.",True,228.9,2025-03-21,57
+1030,Cinderforge Legends,RPG,"Devs clearly care about this game, boss fights updates keep getting better.",True,2.7,2025-12-20,161
+1020,Cinderforge Legends,RPG,"Absolutely loved this game, the graphics is incredible and I can't stop playing.",True,286.2,2026-01-13,67
+1110,Stardrift Colony,Simulation,"Addictive gameplay loop, especially the voice acting. Can't put it down.",True,193.9,2024-10-02,114
+1134,Stardrift Colony,Simulation,"Great value for the price, the controls kept me hooked for hours.",True,299.1,2024-06-11,162
+1007,Cinderforge Legends,RPG,"Constant crashes whenever I try physics engine, very frustrating.",False,211.5,2022-04-04,169
+1034,Cinderforge Legends,RPG,"Addictive gameplay loop, especially the crafting system. Can't put it down.",True,259.2,2022-04-21,172
+1300,Glass Labyrinth,Puzzle,The physics engine is repetitive and gets boring after a few hours.,False,39.7,2024-01-29,131
+1008,Cinderforge Legends,RPG,"Devs clearly care about this game, soundtrack updates keep getting better.",True,260.0,2024-02-18,71
+1037,Cinderforge Legends,RPG,"Addictive gameplay loop, especially the physics engine. Can't put it down.",True,242.5,2025-02-01,25
+1241,Overpass Racer 2,Racing,"Pay-to-win mechanics ruin the boss fights, avoid until fixed.",False,263.0,2025-06-19,33
+1088,Nightfall Protocol,Action,"Solid Action game overall, just wish the combat system was more polished.",False,2.3,2023-12-22,76
+1349,Frostmarch Tactics,Strategy,"Devs clearly care about this game, matchmaking updates keep getting better.",True,228.7,2025-10-25,193
+1279,Glass Labyrinth,Puzzle,Unfortunately the multiplayer mode is broken and ruins the whole experience.,False,220.8,2024-10-19,132
+1187,Iron Vanguard,Shooter,"Absolutely loved this game, the voice acting is incredible and I can't stop playing.",True,83.5,2022-10-24,33
+1215,Whisker Kingdoms,Indie,"Absolutely loved this game, the crafting system is incredible and I can't stop playing.",True,131.1,2024-07-30,235
+1291,Glass Labyrinth,Puzzle,"Great value for the price, the graphics kept me hooked for hours.",True,49.0,2025-12-23,57
+1198,Whisker Kingdoms,Indie,"Great value for the price, the soundtrack kept me hooked for hours.",True,206.2,2024-08-29,17
+1445,Pixel Farm Story,Simulation,"Addictive gameplay loop, especially the level design. Can't put it down.",True,186.0,2024-01-06,243
+1162,Iron Vanguard,Shooter,"Good concept, but matchmaking performance issues hold it back.",True,132.8,2023-12-09,150
+1184,Iron Vanguard,Shooter,"Addictive gameplay loop, especially the physics engine. Can't put it down.",True,28.0,2023-03-11,164
+1006,Cinderforge Legends,RPG,The progression system is fun but the controls needs work.,False,24.1,2023-08-24,212
+1270,Glass Labyrinth,Puzzle,The boss fights is fun but the soundtrack needs work.,False,24.1,2025-05-18,210
+1443,Pixel Farm Story,Simulation,The boss fights is repetitive and gets boring after a few hours.,False,179.1,2025-03-23,98
+1304,Glass Labyrinth,Puzzle,"Enjoyable at first, though controls becomes repetitive later on.",False,7.4,2024-03-16,129
+1326,Frostmarch Tactics,Strategy,"Enjoyable at first, though voice acting becomes repetitive later on.",False,37.0,2025-10-17,139
+1255,Overpass Racer 2,Racing,"Great value for the price, the soundtrack kept me hooked for hours.",True,164.9,2026-01-29,155
+1123,Stardrift Colony,Simulation,Unfortunately the crafting system is broken and ruins the whole experience.,False,183.1,2026-02-24,25
+1057,Nightfall Protocol,Action,"Good concept, but level design performance issues hold it back.",True,106.4,2025-02-20,226
+1197,Whisker Kingdoms,Indie,"10/10 would recommend, the controls alone is worth the purchase.",True,219.0,2023-10-03,109
+1253,Overpass Racer 2,Racing,"The level design feels rushed and unfinished, not worth full price.",False,41.7,2023-08-11,234
+1122,Stardrift Colony,Simulation,"Addictive gameplay loop, especially the boss fights. Can't put it down.",True,272.6,2023-09-01,220
+1027,Cinderforge Legends,RPG,"Devs clearly care about this game, map design updates keep getting better.",True,278.7,2026-03-27,186
+1390,Sundered Realms Online,MMO,"Solid MMO game overall, just wish the combat system was more polished.",True,32.6,2022-07-17,134
+1151,Iron Vanguard,Shooter,The graphics is fun but the controls needs work.,True,150.9,2025-04-23,84
+1200,Whisker Kingdoms,Indie,"Enjoyable at first, though boss fights becomes repetitive later on.",True,123.5,2025-09-24,240
+1096,Stardrift Colony,Simulation,The combat system is fun but the voice acting needs work.,True,60.2,2022-02-11,159
+1260,Overpass Racer 2,Racing,"Absolutely loved this game, the level design is incredible and I can't stop playing.",True,117.4,2024-08-20,11
+1310,Glass Labyrinth,Puzzle,The graphics is repetitive and gets boring after a few hours.,False,112.3,2023-11-26,142
+1457,Pixel Farm Story,Simulation,The matchmaking is fun but the physics engine needs work.,True,288.9,2026-05-29,105
+1105,Stardrift Colony,Simulation,Server issues make the matchmaking nearly unplayable at times.,False,139.7,2026-02-06,151
+1154,Iron Vanguard,Shooter,"10/10 would recommend, the map design alone is worth the purchase.",True,195.1,2023-11-04,218
+1337,Frostmarch Tactics,Strategy,The soundtrack is fun but the combat system needs work.,False,170.6,2022-08-08,237
+1013,Cinderforge Legends,RPG,"Devs clearly care about this game, soundtrack updates keep getting better.",True,274.0,2025-03-07,224
+1353,Frostmarch Tactics,Strategy,"Solid Strategy game overall, just wish the controls was more polished.",False,169.4,2025-02-18,118
+1145,Iron Vanguard,Shooter,"Too many bugs, especially around graphics. Needs major patches.",False,83.2,2026-06-06,218
+1311,Glass Labyrinth,Puzzle,"Good concept, but voice acting performance issues hold it back.",False,150.3,2022-04-03,9
+1414,Sundered Realms Online,MMO,"Constant crashes whenever I try map design, very frustrating.",False,137.6,2022-10-05,77
+1386,Sundered Realms Online,MMO,The combat system is fun but the voice acting needs work.,False,41.7,2025-07-15,59
+1307,Glass Labyrinth,Puzzle,"Surprisingly polished for an indie title, graphics feels top-notch.",True,229.3,2024-01-20,11
+1283,Glass Labyrinth,Puzzle,"Enjoyable at first, though level design becomes repetitive later on.",True,165.2,2023-08-18,228
+1127,Stardrift Colony,Simulation,"The matchmaking is beautifully done, highly recommend to any Simulation fan.",True,236.5,2025-07-04,150
+1043,Cinderforge Legends,RPG,"Great value for the price, the physics engine kept me hooked for hours.",True,17.5,2024-11-06,20
+1330,Frostmarch Tactics,Strategy,"Too many bugs, especially around soundtrack. Needs major patches.",False,184.9,2025-04-16,61
+1141,Stardrift Colony,Simulation,"Disappointing follow-up, the progression system is worse than the previous game.",False,165.5,2025-02-05,104
+1126,Stardrift Colony,Simulation,"The combat system is beautifully done, highly recommend to any Simulation fan.",True,212.2,2025-12-10,220
+1402,Sundered Realms Online,MMO,Best MMO game I've played in years. The multiplayer mode really stands out.,True,102.5,2026-04-24,157
+1161,Iron Vanguard,Shooter,"The soundtrack is beautifully done, highly recommend to any Shooter fan.",True,200.2,2026-07-06,119
+1469,Pixel Farm Story,Simulation,"Disappointing follow-up, the combat system is worse than the previous game.",False,217.9,2026-03-27,59
+1415,Sundered Realms Online,MMO,"10/10 would recommend, the crafting system alone is worth the purchase.",True,241.3,2023-11-06,112
+1441,Pixel Farm Story,Simulation,"The matchmaking is beautifully done, highly recommend to any Simulation fan.",True,275.6,2025-04-23,21
+1373,Frostmarch Tactics,Strategy,"Surprisingly polished for an indie title, storyline feels top-notch.",True,28.2,2026-01-23,212
+1301,Glass Labyrinth,Puzzle,Server issues make the level design nearly unplayable at times.,False,37.2,2024-07-09,63
+1063,Nightfall Protocol,Action,Best Action game I've played in years. The soundtrack really stands out.,True,290.1,2023-07-26,89
+1428,Pixel Farm Story,Simulation,"Devs clearly care about this game, boss fights updates keep getting better.",True,134.0,2024-03-12,118
+1071,Nightfall Protocol,Action,"10/10 would recommend, the crafting system alone is worth the purchase.",True,203.4,2022-12-23,157
+1051,Cinderforge Legends,RPG,The soundtrack is fun but the storyline needs work.,True,82.1,2025-05-23,53
+1044,Cinderforge Legends,RPG,The storyline is fun but the map design needs work.,True,121.4,2025-03-12,63
+1111,Stardrift Colony,Simulation,"Constant crashes whenever I try storyline, very frustrating.",False,121.6,2023-05-14,78
+1226,Whisker Kingdoms,Indie,"The soundtrack is beautifully done, highly recommend to any Indie fan.",True,177.6,2023-12-22,129
+1351,Frostmarch Tactics,Strategy,"Good concept, but storyline performance issues hold it back.",True,49.8,2024-12-01,113
+1315,Glass Labyrinth,Puzzle,"The storyline is beautifully done, highly recommend to any Puzzle fan.",True,239.1,2026-01-25,223
+1210,Whisker Kingdoms,Indie,"The controls is beautifully done, highly recommend to any Indie fan.",True,65.1,2024-11-15,29
+1077,Nightfall Protocol,Action,The map design is fun but the physics engine needs work.,False,124.6,2025-07-13,147
+1383,Sundered Realms Online,MMO,Server issues make the soundtrack nearly unplayable at times.,False,290.0,2025-08-07,189
+1321,Glass Labyrinth,Puzzle,"Absolutely loved this game, the physics engine is incredible and I can't stop playing.",True,211.9,2024-11-28,53
+1463,Pixel Farm Story,Simulation,"Too many bugs, especially around level design. Needs major patches.",False,238.8,2024-03-25,55
+1369,Frostmarch Tactics,Strategy,"10/10 would recommend, the matchmaking alone is worth the purchase.",True,235.8,2023-10-15,178
+1179,Iron Vanguard,Shooter,"10/10 would recommend, the boss fights alone is worth the purchase.",True,136.4,2025-10-05,243
+1225,Whisker Kingdoms,Indie,"Pay-to-win mechanics ruin the map design, avoid until fixed.",False,45.7,2022-05-20,120
+1084,Nightfall Protocol,Action,"Too many bugs, especially around soundtrack. Needs major patches.",False,214.2,2023-04-26,69
+1332,Frostmarch Tactics,Strategy,Best Strategy game I've played in years. The progression system really stands out.,True,204.5,2022-10-09,1
+1312,Glass Labyrinth,Puzzle,"Addictive gameplay loop, especially the level design. Can't put it down.",True,156.0,2022-11-02,155
+1453,Pixel Farm Story,Simulation,Best Simulation game I've played in years. The physics engine really stands out.,True,132.0,2022-08-29,198
+1288,Glass Labyrinth,Puzzle,"10/10 would recommend, the crafting system alone is worth the purchase.",True,247.1,2022-06-01,32
+1271,Glass Labyrinth,Puzzle,Best Puzzle game I've played in years. The soundtrack really stands out.,True,24.5,2025-09-15,75
+1035,Cinderforge Legends,RPG,Unfortunately the matchmaking is broken and ruins the whole experience.,False,121.1,2023-11-26,204
+1073,Nightfall Protocol,Action,"Pay-to-win mechanics ruin the map design, avoid until fixed.",False,139.8,2024-06-24,172
+1346,Frostmarch Tactics,Strategy,"The progression system is beautifully done, highly recommend to any Strategy fan.",True,207.2,2025-08-01,234
+1328,Frostmarch Tactics,Strategy,Best Strategy game I've played in years. The soundtrack really stands out.,True,104.2,2024-06-24,167
+1068,Nightfall Protocol,Action,"Constant crashes whenever I try progression system, very frustrating.",False,109.6,2022-05-24,242
+1385,Sundered Realms Online,MMO,"Absolutely loved this game, the boss fights is incredible and I can't stop playing.",True,157.4,2022-06-02,241
+1416,Sundered Realms Online,MMO,"Great value for the price, the physics engine kept me hooked for hours.",True,90.5,2025-05-20,242
+1396,Sundered Realms Online,MMO,"Absolutely loved this game, the physics engine is incredible and I can't stop playing.",True,69.3,2025-11-18,227
+1195,Whisker Kingdoms,Indie,"The level design is beautifully done, highly recommend to any Indie fan.",True,136.4,2025-05-24,110
+1070,Nightfall Protocol,Action,"Solid Action game overall, just wish the boss fights was more polished.",False,121.0,2023-08-29,141
+1153,Iron Vanguard,Shooter,"The crafting system feels rushed and unfinished, not worth full price.",False,22.9,2026-05-20,248
+1188,Iron Vanguard,Shooter,Best Shooter game I've played in years. The voice acting really stands out.,True,198.5,2022-02-22,33
+1160,Iron Vanguard,Shooter,"Good concept, but map design performance issues hold it back.",False,273.9,2022-10-21,59
+1437,Pixel Farm Story,Simulation,"The multiplayer mode is beautifully done, highly recommend to any Simulation fan.",True,225.8,2026-07-15,203
+1052,Cinderforge Legends,RPG,"Disappointing follow-up, the multiplayer mode is worse than the previous game.",False,151.9,2023-05-30,231
+1412,Sundered Realms Online,MMO,"Great value for the price, the soundtrack kept me hooked for hours.",True,19.4,2024-06-09,70
+1374,Frostmarch Tactics,Strategy,"Absolutely loved this game, the soundtrack is incredible and I can't stop playing.",True,262.1,2023-01-21,205
+1045,Cinderforge Legends,RPG,"Too many bugs, especially around combat system. Needs major patches.",False,126.1,2025-04-10,144
+1196,Whisker Kingdoms,Indie,"Devs clearly care about this game, progression system updates keep getting better.",True,129.3,2023-04-13,105
+1117,Stardrift Colony,Simulation,"The combat system is beautifully done, highly recommend to any Simulation fan.",True,209.4,2022-09-16,163
+1036,Cinderforge Legends,RPG,"Good concept, but multiplayer mode performance issues hold it back.",False,42.5,2023-01-11,71
+1462,Pixel Farm Story,Simulation,"Too many bugs, especially around physics engine. Needs major patches.",False,219.4,2024-07-27,162
+1460,Pixel Farm Story,Simulation,"Too many bugs, especially around crafting system. Needs major patches.",False,190.3,2026-04-24,23
+1355,Frostmarch Tactics,Strategy,Unfortunately the map design is broken and ruins the whole experience.,False,127.4,2025-12-05,16
+1216,Whisker Kingdoms,Indie,"10/10 would recommend, the level design alone is worth the purchase.",True,172.2,2025-12-24,163
+1440,Pixel Farm Story,Simulation,"Too many bugs, especially around map design. Needs major patches.",False,104.7,2024-07-26,158
+1061,Nightfall Protocol,Action,"Addictive gameplay loop, especially the combat system. Can't put it down.",True,67.1,2026-07-31,235
+1418,Sundered Realms Online,MMO,"Constant crashes whenever I try matchmaking, very frustrating.",False,98.1,2023-07-29,209
+1175,Iron Vanguard,Shooter,"The progression system is beautifully done, highly recommend to any Shooter fan.",True,175.6,2025-07-31,240
+1356,Frostmarch Tactics,Strategy,"Addictive gameplay loop, especially the combat system. Can't put it down.",True,10.0,2024-04-17,46
+1454,Pixel Farm Story,Simulation,"Enjoyable at first, though multiplayer mode becomes repetitive later on.",False,50.2,2022-10-13,200
+1004,Cinderforge Legends,RPG,"Enjoyable at first, though progression system becomes repetitive later on.",False,47.1,2026-04-13,86
+1227,Whisker Kingdoms,Indie,"Absolutely loved this game, the controls is incredible and I can't stop playing.",True,17.5,2023-08-11,19
+1348,Frostmarch Tactics,Strategy,"10/10 would recommend, the map design alone is worth the purchase.",True,210.7,2024-08-22,193
+1265,Overpass Racer 2,Racing,"Absolutely loved this game, the voice acting is incredible and I can't stop playing.",True,88.4,2022-03-31,202
+1115,Stardrift Colony,Simulation,"The map design is beautifully done, highly recommend to any Simulation fan.",True,294.2,2023-02-02,75
+1303,Glass Labyrinth,Puzzle,"Enjoyable at first, though graphics becomes repetitive later on.",False,57.4,2022-11-23,127
+1067,Nightfall Protocol,Action,"Absolutely loved this game, the progression system is incredible and I can't stop playing.",True,156.2,2026-07-10,137
+1039,Cinderforge Legends,RPG,"Addictive gameplay loop, especially the crafting system. Can't put it down.",True,64.5,2024-04-01,231
+1244,Overpass Racer 2,Racing,"The controls is beautifully done, highly recommend to any Racing fan.",True,225.8,2026-05-25,114
+1109,Stardrift Colony,Simulation,The progression system is fun but the soundtrack needs work.,True,26.1,2026-01-14,104
+1000,Cinderforge Legends,RPG,"Devs clearly care about this game, progression system updates keep getting better.",True,67.4,2026-02-17,26
+1048,Cinderforge Legends,RPG,Best RPG game I've played in years. The map design really stands out.,True,161.5,2024-11-02,67
+1360,Frostmarch Tactics,Strategy,"Addictive gameplay loop, especially the combat system. Can't put it down.",True,202.2,2025-01-20,108
+1046,Cinderforge Legends,RPG,"Surprisingly polished for an indie title, soundtrack feels top-notch.",True,72.0,2024-03-21,33
+1335,Frostmarch Tactics,Strategy,Unfortunately the boss fights is broken and ruins the whole experience.,False,274.0,2022-12-25,106
+1219,Whisker Kingdoms,Indie,Best Indie game I've played in years. The crafting system really stands out.,True,119.0,2023-09-28,190
