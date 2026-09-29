@@ -5,16 +5,9 @@ sentiment, keywords/themes, and trends — with a built-in chatbot for asking
 questions about the dataset.
 
 
-## ⚠️ About the bundled dataset
-
-`data/steam_reviews_sample.csv` is a **synthetically generated sample** (470
-rows across 10 fictional games) that mirrors the structure of real Steam
-review datasets, so you can run and test the app immediately without any
-setup. **Before your final submission/deployment, swap in a real dataset**,
-for example:
+## 📊 Dataset source
 
 - Kaggle "Steam Reviews Dataset": https://www.kaggle.com/datasets/andrewmvd/steam-reviews
-- Kaggle "Steam Reviews" (100M+ reviews, sample it down): search "steam reviews" on Kaggle
 
 
 ## How it works
