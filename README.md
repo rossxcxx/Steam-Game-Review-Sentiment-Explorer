@@ -50,14 +50,3 @@ players complain about most?").
 
 - Kaggle "Steam Reviews Dataset":
   https://www.kaggle.com/datasets/andrewmvd/steam-reviews
-
-## How It Works
-
-1. **Filter:** the controls below the header narrow down the reviews, and the
-   **Run Sentiment Analysis** button starts the analysis.
-3. **GenAI analysis:** `src/genai_analysis.py` sends each review to the
-   Hugging Face Inference API for sentiment and extracts keywords locally with
-   simple word-frequency analysis.
-4. **Visualize:** Plotly charts display the results.
-5. **Ask the Data:** the side-panel chat bot answers questions about the
-   current reviews.
