@@ -3,7 +3,7 @@
 ## System Description
 
 GlitchGauge is a GenAI-powered web app that analyzes
-Steam / app store game reviews. It classifies each review's sentiment
+Steam. It classifies each review's sentiment
 (positive, negative, or neutral), pulls out the keywords that come up most,
 and shows the results as interactive charts. A built-in AI chat bot in the
 side panel lets you ask plain-English questions about the reviews you are
