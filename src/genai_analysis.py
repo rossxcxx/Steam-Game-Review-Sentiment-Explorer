@@ -102,6 +102,50 @@ def classify_sentiment_batch_genai(reviews: List[str]) -> List[Dict]:
     return results
 
 
+def _build_game_breakdown(df: pd.DataFrame) -> str:
+    """
+    Pre-compute per-game stats in pandas so the chat model gets exact numbers
+    (which game has the most positive reviews, etc.) instead of guessing from
+    a handful of sample sentences.
+    """
+    if df.empty or "app_name" not in df.columns:
+        return "Per-game breakdown: not available."
+
+    lines = []
+    if "sentiment" in df.columns:
+        g = df.groupby("app_name")["sentiment"].value_counts().unstack(fill_value=0)
+        for c in ("positive", "negative", "neutral"):
+            if c not in g.columns:
+                g[c] = 0
+        g["total"] = g[["positive", "negative", "neutral"]].sum(axis=1)
+        g["pos_rate"] = g["positive"] / g["total"]
+        g = g.sort_values(["positive", "pos_rate"], ascending=False)
+        lines.append("Per-game sentiment (from AI sentiment analysis), sorted by number of positive reviews:")
+        for name, r in g.iterrows():
+            lines.append(
+                f"- {name}: {int(r['positive'])} positive, {int(r['negative'])} negative, "
+                f"{int(r['neutral'])} neutral ({r['pos_rate']:.0%} positive, {int(r['total'])} reviews)"
+            )
+    elif "voted_up" in df.columns and df["voted_up"].notna().any():
+        tmp = df.dropna(subset=["voted_up"]).copy()
+        tmp["up"] = tmp["voted_up"].astype(str).str.lower().isin(["true", "1"])
+        g = tmp.groupby("app_name")["up"].agg(up="sum", total="count")
+        g["up_rate"] = g["up"] / g["total"]
+        g = g.sort_values(["up", "up_rate"], ascending=False)
+        lines.append(
+            "Per-game thumbs-up votes (sentiment analysis has NOT been run yet), "
+            "sorted by number of thumbs-up reviews:"
+        )
+        for name, r in g.iterrows():
+            lines.append(f"- {name}: {int(r['up'])} thumbs-up out of {int(r['total'])} reviews ({r['up_rate']:.0%})")
+    else:
+        counts = df["app_name"].value_counts()
+        lines.append("Reviews per game (no sentiment data available yet):")
+        for name, c in counts.items():
+            lines.append(f"- {name}: {int(c)} reviews")
+    return "\n".join(lines)
+
+
 def answer_question_about_data_genai(question: str, df: pd.DataFrame) -> str:
     """RAG-lite chatbot using a Hugging Face chat/instruct model."""
     client = get_client(provider=CHAT_PROVIDER)
@@ -109,7 +153,11 @@ def answer_question_about_data_genai(question: str, df: pd.DataFrame) -> str:
     total = len(df)
     pos = int((df.get("sentiment") == "positive").sum()) if "sentiment" in df else None
     neg = int((df.get("sentiment") == "negative").sum()) if "sentiment" in df else None
-    sample_reviews = df["review_text"].sample(min(25, total), random_state=1).tolist()
+    sample_df = df.sample(min(25, total), random_state=1)
+    if "app_name" in sample_df.columns:
+        sample_reviews = [f"[{a}] {t}" for a, t in zip(sample_df["app_name"], sample_df["review_text"])]
+    else:
+        sample_reviews = sample_df["review_text"].tolist()
 
     context = f"""
 Dataset summary:
@@ -117,7 +165,9 @@ Dataset summary:
 - Positive: {pos if pos is not None else 'N/A'}
 - Negative: {neg if neg is not None else 'N/A'}
 
-Sample of up to 25 reviews from the current filtered view:
+{_build_game_breakdown(df)}
+
+Sample of up to 25 reviews from the current filtered view (game name in brackets):
 {chr(10).join(f"- {r}" for r in sample_reviews)}
 """.strip()
 
@@ -126,8 +176,14 @@ Sample of up to 25 reviews from the current filtered view:
             "role": "system",
             "content": (
                 "You are a helpful analyst answering questions about a game "
-                "review dataset. Base your answer only on the summary and "
-                "sample reviews provided. Be concise and specific."
+                "review dataset. Base your answer only on the summary, the "
+                "per-game statistics, and the sample reviews provided. Always "
+                "give a direct answer first (for example, name the game), "
+                "using the per-game statistics for any question about which "
+                "game is best, worst, or most reviewed. If the data is "
+                "limited or sentiment analysis has not been run, still give "
+                "your best answer from what is available and add one short "
+                "sentence noting the limitation. Be concise and specific."
             ),
         },
         {"role": "user", "content": f"{context}\n\nQuestion: {question}"},
