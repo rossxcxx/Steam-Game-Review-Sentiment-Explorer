@@ -1,11 +1,7 @@
 """
 genai_analysis.py
 Handles sentiment classification, keyword extraction, and Q&A about the
-review dataset. Supports two modes:
-
-  - "genai"   : calls the Hugging Face Inference API (free tier, token-based)
-  - "offline" : a free, local, lexicon-based fallback with no API calls at
-                all, so the app is fully testable/demoable with zero setup.
+review dataset using the Hugging Face Inference API (free tier, token-based).
 
 Hugging Face setup:
   1. Create a token at https://huggingface.co/settings/tokens (a "Read" token
@@ -16,7 +12,7 @@ Hugging Face setup:
 Models used (swap these constants if a model becomes unavailable on your
 Hugging Face plan/provider):
   - SENTIMENT_MODEL: a dedicated 3-class sentiment classifier
-  - CHAT_MODEL: an instruction-tuned chat model for the "Ask the Data" tab
+  - CHAT_MODEL: an instruction-tuned chat model for the "Ask the Data" chat bot
 """
 
 import re
@@ -54,8 +50,7 @@ def get_client(provider: str = SENTIMENT_PROVIDER) -> InferenceClient:
             "No HF_TOKEN found in Streamlit secrets. Create a token at "
             "https://huggingface.co/settings/tokens and add it to "
             "`.streamlit/secrets.toml` (locally) or Streamlit Community "
-            "Cloud's Secrets settings, or switch to 'Offline (free demo)' "
-            "mode in the sidebar."
+            "Cloud's Secrets settings."
         )
         st.stop()
     return InferenceClient(provider=provider, api_key=hf_token)
@@ -66,7 +61,7 @@ class GenAIUnavailableError(Exception):
 
 
 # ---------------------------------------------------------------------------
-# GenAI (Hugging Face) mode
+# GenAI (Hugging Face)
 # ---------------------------------------------------------------------------
 
 @st.cache_data(show_spinner=False)
@@ -76,7 +71,7 @@ def classify_sentiment_batch_genai(reviews: List[str]) -> List[Dict]:
     review using a dedicated sentiment model, and extracts simple keywords
     locally (Hugging Face's free-tier classifiers return only a label +
     score, not keywords, so keyword extraction is done with a lightweight
-    local frequency method regardless of mode).
+    local frequency method regardless).
     """
     client = get_client(provider=SENTIMENT_PROVIDER)
     results = []
@@ -90,8 +85,7 @@ def classify_sentiment_batch_genai(reviews: List[str]) -> List[Dict]:
                 "token is invalid/missing the 'Inference' permission, you've "
                 "hit the free-tier rate limit, or the model is temporarily "
                 "unavailable. Check your token at "
-                "https://huggingface.co/settings/tokens, or switch to "
-                "'Offline (free demo)' mode in the sidebar. "
+                "https://huggingface.co/settings/tokens. "
                 f"Details: {e}"
             ) from e
         except Exception as e:
@@ -144,8 +138,8 @@ Sample of up to 25 reviews from the current filtered view:
     except HfHubHTTPError as e:
         raise GenAIUnavailableError(
             "Hugging Face rejected the chat request. Check your token's "
-            "'Inference' permission, try again in a moment (free-tier rate "
-            f"limit), or switch to 'Offline (free demo)' mode. Details: {e}"
+            "'Inference' permission, or try again in a moment (free-tier rate "
+            f"limit). Details: {e}"
         ) from e
     except Exception as e:
         raise GenAIUnavailableError(f"Hugging Face API error: {e}") from e
@@ -154,7 +148,7 @@ Sample of up to 25 reviews from the current filtered view:
 
 
 # ---------------------------------------------------------------------------
-# Shared local keyword extraction (used in both genai and offline modes)
+# Local keyword extraction
 # ---------------------------------------------------------------------------
 
 _STOPWORDS = {
@@ -176,125 +170,12 @@ def _extract_keywords_local(text: str, top_n: int = 3) -> List[str]:
 
 
 # ---------------------------------------------------------------------------
-# Offline (free, no API) fallback mode
+# Entry points used by app.py
 # ---------------------------------------------------------------------------
 
-_POSITIVE_WORDS = {
-    "love", "loved", "great", "best", "amazing", "incredible", "fun", "addictive",
-    "beautiful", "polished", "recommend", "recommended", "worth", "excellent",
-    "enjoy", "enjoyed", "enjoyable", "fantastic", "awesome", "solid", "smooth",
-    "stunning", "impressive", "satisfying", "hooked", "gem", "masterpiece",
-}
-_NEGATIVE_WORDS = {
-    "bug", "bugs", "broken", "crash", "crashes", "unplayable", "disappointing",
-    "disappointed", "frustrating", "repetitive", "boring", "worse", "avoid",
-    "issue", "issues", "unfinished", "rushed", "bad", "worst", "terrible",
-    "laggy", "glitchy", "pay-to-win", "grindy", "overpriced",
-}
-
-
-def classify_sentiment_batch_offline(reviews: List[str]) -> List[Dict]:
-    """
-    Free, local, lexicon-based sentiment classifier + naive keyword extraction.
-    No API calls, no token needed. Good enough for demoing the app's UI/UX,
-    not a substitute for real model-quality analysis.
-    """
-    results = []
-    for text in reviews:
-        tokens = _tokenize(text)
-        pos_hits = sum(1 for t in tokens if t in _POSITIVE_WORDS)
-        neg_hits = sum(1 for t in tokens if t in _NEGATIVE_WORDS)
-
-        if pos_hits > neg_hits:
-            sentiment = "positive"
-        elif neg_hits > pos_hits:
-            sentiment = "negative"
-        else:
-            sentiment = "neutral"
-
-        results.append({"sentiment": sentiment, "keywords": _extract_keywords_local(text)})
-    return results
-
-
-def answer_question_about_data_offline(question: str, df: pd.DataFrame) -> str:
-    """
-    Free, local, rule-based 'chatbot' fallback: answers a small set of
-    common question patterns using stats computed directly from the data,
-    instead of calling any API.
-    """
-    total = len(df)
-    if total == 0:
-        return "There are no reviews in the current view to analyze."
-
-    q = question.lower()
-    has_sentiment = "sentiment" in df.columns
-
-    if has_sentiment:
-        counts = df["sentiment"].value_counts()
-        pos = int(counts.get("positive", 0))
-        neg = int(counts.get("negative", 0))
-        neu = int(counts.get("neutral", 0))
-    else:
-        pos = neg = neu = None
-
-    if any(w in q for w in ["complain", "negative", "problem", "issue", "bad"]):
-        if "keywords" in df.columns:
-            neg_kw = (
-                df.loc[df.get("sentiment") == "negative", "keywords"]
-                .str.split(", ")
-                .explode()
-                .dropna()
-            )
-            neg_kw = neg_kw[neg_kw != ""]
-            if not neg_kw.empty:
-                top = ", ".join(neg_kw.value_counts().head(5).index.tolist())
-                return f"[Offline mode] Most common negative themes: {top}."
-        return "[Offline mode] Run sentiment analysis first so I can identify complaint themes."
-
-    if any(w in q for w in ["popular", "best", "top", "recommend"]):
-        if "app_name" in df.columns:
-            top_games = df["app_name"].value_counts().head(3)
-            listing = ", ".join(f"{g} ({c} reviews)" for g, c in top_games.items())
-            return f"[Offline mode] Games with the most reviews in this view: {listing}."
-
-    if any(w in q for w in ["trend", "over time", "improving", "declining"]):
-        if "review_date" in df.columns and df["review_date"].notna().any() and has_sentiment:
-            trend = df.dropna(subset=["review_date"]).copy()
-            trend["month"] = trend["review_date"].dt.to_period("M")
-            recent = trend[trend["month"] == trend["month"].max()]
-            recent_pos_rate = (recent["sentiment"] == "positive").mean() if len(recent) else None
-            if recent_pos_rate is not None:
-                return (
-                    f"[Offline mode] In the most recent month in this view, "
-                    f"{recent_pos_rate:.0%} of reviews were positive "
-                    f"(out of {pos + neg + neu} total analyzed)."
-                )
-
-    if pos is not None:
-        return (
-            f"[Offline mode - no API used] Of {total} reviews in the current view: "
-            f"{pos} positive, {neg} negative, {neu} neutral. "
-            f"For richer, natural-language answers, add an HF_TOKEN and "
-            f"switch to GenAI mode in the sidebar."
-        )
-
-    return (
-        "[Offline mode] Run sentiment analysis first (sidebar) so I have "
-        "sentiment data to answer questions about."
-    )
-
-
-# ---------------------------------------------------------------------------
-# Unified entry points used by app.py
-# ---------------------------------------------------------------------------
-
-def classify_sentiment_batch(reviews: List[str], mode: str = "genai") -> List[Dict]:
-    if mode == "offline":
-        return classify_sentiment_batch_offline(reviews)
+def classify_sentiment_batch(reviews: List[str]) -> List[Dict]:
     return classify_sentiment_batch_genai(reviews)
 
 
-def answer_question_about_data(question: str, df: pd.DataFrame, mode: str = "genai") -> str:
-    if mode == "offline":
-        return answer_question_about_data_offline(question, df)
+def answer_question_about_data(question: str, df: pd.DataFrame) -> str:
     return answer_question_about_data_genai(question, df)
