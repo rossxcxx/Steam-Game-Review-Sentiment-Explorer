@@ -191,23 +191,51 @@ with tab_viz:
 # ---------------------------------------------------------------------------
 # Sidebar: AI chat bot
 # ---------------------------------------------------------------------------
+if "chat_history" not in st.session_state:
+    st.session_state.chat_history = []
+
 with st.sidebar:
     st.header("💬 Ask the Data")
     st.caption(
-        "Ask things like 'What do players complain about most?' or "
-        "'Is sentiment trending up or down?' Answers use the currently "
-        "analyzed/filtered reviews as context."
+        "Ask about the reviews, e.g. 'What do players complain about most?' "
+        "Answers use the analyzed (or filtered) reviews as context."
     )
+
+    if st.button(
+        "🗑️ Clear chat",
+        use_container_width=True,
+        disabled=not st.session_state.chat_history,
+    ):
+        st.session_state.chat_history = []
+        st.rerun()
+
     context_df = st.session_state.analyzed_df if st.session_state.analyzed_df is not None else filtered_df
-    user_question = st.text_input("Your question")
-    if st.button("Ask") and user_question.strip():
-        with st.spinner("Thinking..."):
-            try:
-                answer = answer_question_about_data(user_question, context_df)
-            except GenAIUnavailableError as e:
-                st.error(str(e))
-                st.stop()
-        st.markdown(f"**Answer:** {answer}")
+
+    # Scrollable message area
+    chat_box = st.container(height=450, border=True)
+    with chat_box:
+        if not st.session_state.chat_history:
+            st.caption("No messages yet. Type a question below to get started.")
+        for msg in st.session_state.chat_history:
+            with st.chat_message(msg["role"]):
+                st.markdown(msg["content"])
+
+    user_question = st.chat_input("Ask about the reviews...")
+    if user_question and user_question.strip():
+        question = user_question.strip()
+        with chat_box:
+            with st.chat_message("user"):
+                st.markdown(question)
+            with st.chat_message("assistant"):
+                with st.spinner("Thinking..."):
+                    try:
+                        answer = answer_question_about_data(question, context_df)
+                    except GenAIUnavailableError as e:
+                        st.error(str(e))
+                        st.stop()
+                st.markdown(answer)
+        st.session_state.chat_history.append({"role": "user", "content": question})
+        st.session_state.chat_history.append({"role": "assistant", "content": answer})
 
 st.divider()
 st.caption("Built with Streamlit + Hugging Face for a GenAI dataset-analysis assignment.")
