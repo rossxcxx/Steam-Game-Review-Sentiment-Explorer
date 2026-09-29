@@ -50,3 +50,7 @@ players complain about most?").
 
 - Kaggle "Steam Reviews Dataset":
   https://www.kaggle.com/datasets/andrewmvd/steam-reviews
+
+## App Link
+
+- https://steam-game-review-sentiment-explorer-h53vsbrzveb5ss8vqwpi9a.streamlit.app
