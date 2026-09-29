@@ -1,5 +1,5 @@
 """
-Steam Game Review Sentiment Explorer
+GlitchGauge
 A GenAI-powered Streamlit app for analyzing Steam / app store game reviews.
 """
 
@@ -15,7 +15,7 @@ from src.genai_analysis import (
 )
 
 st.set_page_config(
-    page_title="Steam Review Sentiment Explorer",
+    page_title="GlitchGauge",
     page_icon="🎮",
     layout="wide",
 )
@@ -23,22 +23,16 @@ st.set_page_config(
 # ---------------------------------------------------------------------------
 # Header
 # ---------------------------------------------------------------------------
-st.title("🎮 Steam Game Review Sentiment Explorer")
+st.title("🎮 GlitchGauge")
 st.caption(
-    "Upload a dataset of Steam / app store game reviews, run GenAI-powered "
-    "sentiment analysis and keyword extraction, and explore trends interactively."
+    "Gauge how players really feel: run GenAI-powered sentiment analysis and "
+    "keyword extraction on Steam / app store game reviews, and explore trends interactively."
 )
 
 # ---------------------------------------------------------------------------
-# Sidebar: data source
+# Data source
 # ---------------------------------------------------------------------------
-st.sidebar.header("1. Dataset")
-default_path = "data/steam_reviews_sample.csv"
-uploaded_file = st.sidebar.file_uploader(
-    "Upload a CSV of game reviews", type=["csv"], help="Or leave empty to use the bundled sample dataset."
-)
-
-data_source = uploaded_file if uploaded_file is not None else default_path
+data_source = "data/steam_reviews_sample.csv"
 
 try:
     df = load_data(data_source)
@@ -46,32 +40,38 @@ except Exception as e:
     st.error(f"Could not load dataset: {e}")
     st.stop()
 
-st.sidebar.success(f"Loaded {len(df):,} reviews.")
+st.success(f"Loaded {len(df):,} reviews.")
 
 # ---------------------------------------------------------------------------
-# Sidebar: filters
+# Filters (below the header)
 # ---------------------------------------------------------------------------
-st.sidebar.header("2. Filters")
+st.subheader("Filters")
 
-game_options = sorted(df["app_name"].dropna().unique().tolist())
-selected_games = st.sidebar.multiselect("Game(s)", game_options, default=[])
+col_game, col_genre, col_date, col_play = st.columns(4)
 
-genre_options = sorted(df["genre"].dropna().unique().tolist())
-selected_genres = st.sidebar.multiselect("Genre(s)", genre_options, default=[])
+with col_game:
+    game_options = sorted(df["app_name"].dropna().unique().tolist())
+    selected_games = st.multiselect("Game(s)", game_options, default=[])
+
+with col_genre:
+    genre_options = sorted(df["genre"].dropna().unique().tolist())
+    selected_genres = st.multiselect("Genre(s)", genre_options, default=[])
 
 date_range = None
-if df["review_date"].notna().any():
-    min_date = df["review_date"].min().date()
-    max_date = df["review_date"].max().date()
-    date_range = st.sidebar.date_input("Review date range", (min_date, max_date))
-    if isinstance(date_range, tuple) and len(date_range) != 2:
-        date_range = None
+with col_date:
+    if df["review_date"].notna().any():
+        min_date = df["review_date"].min().date()
+        max_date = df["review_date"].max().date()
+        date_range = st.date_input("Review date range", (min_date, max_date))
+        if isinstance(date_range, tuple) and len(date_range) != 2:
+            date_range = None
 
 min_playtime = None
-if df["playtime_hours"].notna().any():
-    min_playtime = st.sidebar.slider(
-        "Minimum playtime (hours)", 0.0, float(df["playtime_hours"].max()), 0.0
-    )
+with col_play:
+    if df["playtime_hours"].notna().any():
+        min_playtime = st.slider(
+            "Minimum playtime (hours)", 0.0, float(df["playtime_hours"].max()), 0.0
+        )
 
 filtered_df = get_filtered_data(
     df,
@@ -81,83 +81,55 @@ filtered_df = get_filtered_data(
     min_playtime=min_playtime,
 )
 
-st.sidebar.markdown(f"**{len(filtered_df):,}** reviews match current filters.")
+st.markdown(f"**{len(filtered_df):,}** reviews match current filters.")
 
 # ---------------------------------------------------------------------------
-# Sidebar: run analysis
+# Run analysis (next to the filters)
 # ---------------------------------------------------------------------------
-st.sidebar.header("3. GenAI Analysis")
-analysis_mode_label = st.sidebar.radio(
-    "Analysis mode",
-    ["GenAI (Hugging Face API)", "Offline (free demo, no API)"],
-    index=0,
-    help=(
-        "GenAI mode requires a Hugging Face access token (free to create). "
-        "Offline mode uses a local keyword-based classifier so you can test "
-        "the app with no token/setup at all."
-    ),
-)
-analysis_mode = "genai" if analysis_mode_label.startswith("GenAI") else "offline"
-
 n_available = len(filtered_df)
 
 if n_available == 0:
-    st.sidebar.warning("No reviews match the current filters — adjust filters above to enable analysis.")
+    st.warning("No reviews match the current filters — adjust filters above to enable analysis.")
     sample_cap = 0
     run_analysis = False
-    st.sidebar.button("Run Sentiment Analysis", type="primary", disabled=True)
+    st.button("Run Sentiment Analysis", type="primary", disabled=True)
 elif n_available <= 20:
-    st.sidebar.caption(f"Only {n_available} review(s) match filters — analyzing all of them.")
+    st.caption(f"Only {n_available} review(s) match filters — analyzing all of them.")
     sample_cap = n_available
-    run_analysis = st.sidebar.button("Run Sentiment Analysis", type="primary")
+    run_analysis = st.button("Run Sentiment Analysis", type="primary")
 else:
     slider_max = min(500, n_available)
     default_val = min(150, slider_max)
-    sample_cap = st.sidebar.slider(
+    sample_cap = st.slider(
         "Max reviews to analyze (controls API cost)", 20, slider_max, default_val
     )
-    run_analysis = st.sidebar.button("Run Sentiment Analysis", type="primary")
+    run_analysis = st.button("Run Sentiment Analysis", type="primary")
 
 if "analyzed_df" not in st.session_state:
     st.session_state.analyzed_df = None
-if "analysis_mode" not in st.session_state:
-    st.session_state.analysis_mode = analysis_mode
 
 if run_analysis:
     if filtered_df.empty:
         st.warning("No reviews match the current filters.")
     else:
-        spinner_msg = (
-            "Calling Hugging Face API to analyze reviews..."
-            if analysis_mode == "genai"
-            else "Running free offline keyword-based analysis..."
-        )
-        with st.spinner(spinner_msg):
+        with st.spinner("Calling Hugging Face API to analyze reviews..."):
             work_df = filtered_df.sample(
                 min(sample_cap, len(filtered_df)), random_state=1
             ).reset_index(drop=True)
             try:
-                results = classify_sentiment_batch(
-                    work_df["review_text"].tolist(), mode=analysis_mode
-                )
+                results = classify_sentiment_batch(work_df["review_text"].tolist())
             except GenAIUnavailableError as e:
                 st.error(str(e))
-                st.info(
-                    "Tip: switch 'Analysis mode' to 'Offline (free demo, no API)' "
-                    "in the sidebar to keep testing without spending API credits."
-                )
                 st.stop()
             work_df["sentiment"] = [r.get("sentiment", "neutral") for r in results]
             work_df["keywords"] = [", ".join(r.get("keywords", [])) for r in results]
             st.session_state.analyzed_df = work_df
-            st.session_state.analysis_mode = analysis_mode
-        mode_note = "GenAI" if analysis_mode == "genai" else "offline (free demo)"
-        st.success(f"Analyzed {len(work_df):,} reviews using {mode_note} mode.")
+        st.success(f"Analyzed {len(work_df):,} reviews using GenAI.")
 
 # ---------------------------------------------------------------------------
 # Main content
 # ---------------------------------------------------------------------------
-tab_overview, tab_viz, tab_chat = st.tabs(["📄 Data Preview", "📊 Visualizations", "💬 Ask the Data"])
+tab_overview, tab_viz = st.tabs(["📄 Data Preview", "📊 Visualizations"])
 
 with tab_overview:
     st.subheader("Filtered Review Sample")
@@ -165,7 +137,7 @@ with tab_overview:
 
 with tab_viz:
     if st.session_state.analyzed_df is None:
-        st.info("Run sentiment analysis from the sidebar to see visualizations here.")
+        st.info("Run sentiment analysis above to see visualizations here.")
     else:
         adf = st.session_state.analyzed_df
         col1, col2 = st.columns(2)
@@ -216,32 +188,26 @@ with tab_viz:
                 use_container_width=True,
             )
 
-with tab_chat:
-    st.subheader("Ask questions about the reviews")
+# ---------------------------------------------------------------------------
+# Sidebar: AI chat bot
+# ---------------------------------------------------------------------------
+with st.sidebar:
+    st.header("💬 Ask the Data")
     st.caption(
         "Ask things like 'What do players complain about most?' or "
         "'Is sentiment trending up or down?' Answers use the currently "
         "analyzed/filtered reviews as context."
     )
     context_df = st.session_state.analyzed_df if st.session_state.analyzed_df is not None else filtered_df
-    chat_mode = st.session_state.get("analysis_mode", analysis_mode)
-    st.caption(f"Currently answering in **{'GenAI' if chat_mode == 'genai' else 'offline (free demo)'}** mode.")
     user_question = st.text_input("Your question")
     if st.button("Ask") and user_question.strip():
         with st.spinner("Thinking..."):
             try:
-                answer = answer_question_about_data(user_question, context_df, mode=chat_mode)
+                answer = answer_question_about_data(user_question, context_df)
             except GenAIUnavailableError as e:
                 st.error(str(e))
-                st.info(
-                    "Tip: switch 'Analysis mode' to 'Offline (free demo, no API)' "
-                    "in the sidebar to keep testing without spending API credits."
-                )
                 st.stop()
         st.markdown(f"**Answer:** {answer}")
 
 st.divider()
-st.caption(
-    "Built with Streamlit + Hugging Face for a GenAI dataset-analysis assignment. "
-    "Swap in your own Steam reviews CSV via the sidebar uploader."
-)
+st.caption("Built with Streamlit + Hugging Face for a GenAI dataset-analysis assignment.")
