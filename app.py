@@ -133,7 +133,44 @@ tab_overview, tab_viz = st.tabs(["📄 Data Preview", "📊 Visualizations"])
 
 with tab_overview:
     st.subheader("Filtered Review Sample")
-    st.dataframe(filtered_df.head(50), use_container_width=True)
+    preview_df = filtered_df.head(50)
+
+    if preview_df.empty:
+        st.info("No reviews to show. Adjust the filters above.")
+    else:
+        cards_per_row = 3
+        records = preview_df.to_dict("records")
+
+        for i in range(0, len(records), cards_per_row):
+            cols = st.columns(cards_per_row)
+            for col, r in zip(cols, records[i:i + cards_per_row]):
+                with col:
+                    with st.container(border=True, height=220):
+                        # Recommendation badge (from the dataset's thumbs up/down)
+                        voted = str(r.get("voted_up")).strip().lower()
+                        if voted in ("true", "1"):
+                            badge = "👍 Recommended"
+                        elif voted in ("false", "0"):
+                            badge = "👎 Not recommended"
+                        else:
+                            badge = ""
+
+                        st.markdown(f"**{r.get('app_name', 'Unknown Game')}**")
+                        st.caption(" · ".join(x for x in [str(r.get("genre", "")), badge] if x))
+
+                        # Review text ("$" escaped so it isn't read as a math formula)
+                        st.markdown(str(r["review_text"]).replace("$", "\\$"))
+
+                        # Footer details
+                        details = []
+                        if pd.notna(r.get("review_date")):
+                            details.append(f"📅 {r['review_date'].strftime('%b %d, %Y')}")
+                        if pd.notna(r.get("playtime_hours")):
+                            details.append(f"⏱️ {float(r['playtime_hours']):,.1f} hrs")
+                        if pd.notna(r.get("helpful_votes")):
+                            details.append(f"🙌 {int(r['helpful_votes']):,} helpful")
+                        if details:
+                            st.caption("  ·  ".join(details))
 
 with tab_viz:
     if st.session_state.analyzed_df is None:
