@@ -3,6 +3,8 @@ GlitchGauge
 A GenAI-powered Streamlit app for analyzing Steam / app store game reviews.
 """
 
+import html as _html
+
 import pandas as pd
 import plotly.express as px
 import streamlit as st
@@ -21,12 +23,208 @@ st.set_page_config(
 )
 
 # ---------------------------------------------------------------------------
+# Look & feel (display only)
+# ---------------------------------------------------------------------------
+CUSTOM_CSS = """
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&display=swap');
+
+:root {
+    --gg-ink: #15131F;
+    --gg-accent: #0E9F9A;
+    --gg-pos: #2ecc71;
+    --gg-neg: #e74c3c;
+    --gg-neu: #95a5a6;
+    --gg-line: rgba(128, 128, 128, 0.28);
+    --gg-soft: rgba(128, 128, 128, 0.08);
+    --gg-display: 'Space Grotesk', system-ui, -apple-system, 'Segoe UI', sans-serif;
+}
+
+.block-container { padding-top: 2rem; max-width: 1400px; }
+
+h2, h3, h4 { font-family: var(--gg-display) !important; letter-spacing: -0.01em; }
+
+/* Hero */
+.gg-hero {
+    background: var(--gg-ink);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    padding: 28px 32px;
+    margin-bottom: 1.25rem;
+}
+.gg-title {
+    font-family: var(--gg-display);
+    font-weight: 700;
+    font-size: 2.7rem;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: #F4F2FA;
+    text-shadow: -2px 0 rgba(255, 61, 129, 0.75), 2px 0 rgba(25, 195, 212, 0.75);
+}
+.gg-tagline {
+    color: #B9B4CC;
+    margin: 0.6rem 0 0;
+    font-size: 1.02rem;
+    max-width: 64ch;
+    line-height: 1.5;
+}
+
+/* Metric tiles */
+[data-testid="stMetric"] {
+    background: var(--gg-soft);
+    border: 1px solid var(--gg-line);
+    border-radius: 12px;
+    padding: 14px 18px;
+}
+[data-testid="stMetricValue"] { font-family: var(--gg-display); font-weight: 700; }
+
+/* Primary button */
+button[kind="primary"], [data-testid="stBaseButton-primary"] {
+    background: var(--gg-accent);
+    border: none;
+    color: #fff;
+    font-weight: 600;
+    border-radius: 10px;
+    padding: 0.55rem 1rem;
+}
+button[kind="primary"]:hover, [data-testid="stBaseButton-primary"]:hover {
+    filter: brightness(1.1);
+    color: #fff;
+}
+
+/* Tabs */
+.stTabs [data-baseweb="tab-list"] { gap: 0.5rem; }
+.stTabs [data-baseweb="tab"] { font-weight: 600; padding: 0.55rem 1rem; }
+
+/* Sidebar */
+[data-testid="stSidebar"] { border-right: 1px solid var(--gg-line); }
+
+/* Review cards */
+.gg-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+    gap: 14px;
+    margin-top: 0.5rem;
+}
+.gg-card {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    min-height: 190px;
+    padding: 16px 18px;
+    border: 1px solid var(--gg-line);
+    border-left: 6px solid var(--gg-neu);
+    border-radius: 12px;
+    background: var(--gg-soft);
+}
+.gg-card.pos { border-left-color: var(--gg-pos); }
+.gg-card.neg { border-left-color: var(--gg-neg); }
+.gg-head { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; }
+.gg-game { font-family: var(--gg-display); font-weight: 700; font-size: 1.08rem; }
+.gg-verdict { font-size: 0.8rem; font-weight: 600; white-space: nowrap; }
+.gg-card.pos .gg-verdict { color: var(--gg-pos); }
+.gg-card.neg .gg-verdict { color: var(--gg-neg); }
+.gg-genre { font-size: 0.85rem; opacity: 0.7; margin-top: -6px; }
+.gg-text { font-size: 0.98rem; line-height: 1.55; flex: 1; }
+.gg-foot { display: flex; flex-wrap: wrap; gap: 6px; }
+.gg-chip {
+    font-size: 0.78rem;
+    padding: 2px 10px;
+    border-radius: 999px;
+    border: 1px solid var(--gg-line);
+    opacity: 0.85;
+}
+
+/* Footer */
+.gg-footer {
+    text-align: center;
+    opacity: 0.6;
+    font-size: 0.85rem;
+    margin-top: 2.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--gg-line);
+}
+</style>
+"""
+st.markdown(CUSTOM_CSS, unsafe_allow_html=True)
+
+
+def _esc(value) -> str:
+    """Escape text for safe use inside the custom HTML cards."""
+    return _html.escape(str(value)).replace("$", "&#36;")
+
+
+def build_review_cards_html(records) -> str:
+    """Build the review-card grid as a single HTML string (display only)."""
+    cards = []
+    for r in records:
+        voted = str(r.get("voted_up")).strip().lower()
+        if voted in ("true", "1"):
+            tone, verdict = "pos", "👍 Recommended"
+        elif voted in ("false", "0"):
+            tone, verdict = "neg", "👎 Not recommended"
+        else:
+            tone, verdict = "", ""
+
+        name = _esc(r.get("app_name", "Unknown Game"))
+        genre = r.get("genre")
+        text = _esc(r["review_text"])
+
+        chips = []
+        if pd.notna(r.get("review_date")):
+            chips.append(f"📅 {r['review_date'].strftime('%b %d, %Y')}")
+        if pd.notna(r.get("playtime_hours")):
+            chips.append(f"⏱️ {float(r['playtime_hours']):,.1f} hrs")
+        if pd.notna(r.get("helpful_votes")):
+            chips.append(f"🙌 {int(r['helpful_votes']):,} helpful")
+
+        parts = [f'<div class="gg-card {tone}">']
+        parts.append(
+            f'<div class="gg-head"><div class="gg-game">{name}</div>'
+            + (f'<div class="gg-verdict">{verdict}</div>' if verdict else "")
+            + "</div>"
+        )
+        if pd.notna(genre) and str(genre).strip():
+            parts.append(f'<div class="gg-genre">{_esc(genre)}</div>')
+        parts.append(f'<div class="gg-text">{text}</div>')
+        if chips:
+            parts.append(
+                '<div class="gg-foot">'
+                + "".join(f'<span class="gg-chip">{_esc(c)}</span>' for c in chips)
+                + "</div>"
+            )
+        parts.append("</div>")
+        cards.append("".join(parts))
+    return '<div class="gg-grid">' + "".join(cards) + "</div>"
+
+
+def style_fig(fig, height=340):
+    """Consistent, theme-friendly chart styling (display only)."""
+    fig.update_layout(
+        height=height,
+        margin=dict(l=10, r=10, t=10, b=10),
+        paper_bgcolor="rgba(0,0,0,0)",
+        plot_bgcolor="rgba(0,0,0,0)",
+        legend_title_text="",
+        bargap=0.3,
+    )
+    fig.update_xaxes(showgrid=False)
+    fig.update_yaxes(gridcolor="rgba(128,128,128,0.2)")
+    return fig
+
+
+SENTIMENT_ORDER = {"sentiment": ["positive", "neutral", "negative"]}
+
+# ---------------------------------------------------------------------------
 # Header
 # ---------------------------------------------------------------------------
-st.title("🎮 GlitchGauge")
-st.caption(
-    "Gauge how players really feel: run GenAI-powered sentiment analysis and "
-    "keyword extraction on Steam / app store game reviews, and explore trends interactively."
+st.markdown(
+    '<div class="gg-hero">'
+    '<div class="gg-title">🎮 GlitchGauge</div>'
+    '<p class="gg-tagline">Gauge how players really feel: run GenAI-powered sentiment analysis and '
+    "keyword extraction on Steam / app store game reviews, and explore trends interactively.</p>"
+    "</div>",
+    unsafe_allow_html=True,
 )
 
 # ---------------------------------------------------------------------------
@@ -40,38 +238,37 @@ except Exception as e:
     st.error(f"Could not load dataset: {e}")
     st.stop()
 
-st.success(f"Loaded {len(df):,} reviews.")
-
 # ---------------------------------------------------------------------------
 # Filters (below the header)
 # ---------------------------------------------------------------------------
-st.subheader("Filters")
+with st.container(border=True):
+    st.subheader("Filters")
 
-col_game, col_genre, col_date, col_play = st.columns(4)
+    col_game, col_genre, col_date, col_play = st.columns(4)
 
-with col_game:
-    game_options = sorted(df["app_name"].dropna().unique().tolist())
-    selected_games = st.multiselect("Game(s)", game_options, default=[])
+    with col_game:
+        game_options = sorted(df["app_name"].dropna().unique().tolist())
+        selected_games = st.multiselect("Game(s)", game_options, default=[])
 
-with col_genre:
-    genre_options = sorted(df["genre"].dropna().unique().tolist())
-    selected_genres = st.multiselect("Genre(s)", genre_options, default=[])
+    with col_genre:
+        genre_options = sorted(df["genre"].dropna().unique().tolist())
+        selected_genres = st.multiselect("Genre(s)", genre_options, default=[])
 
-date_range = None
-with col_date:
-    if df["review_date"].notna().any():
-        min_date = df["review_date"].min().date()
-        max_date = df["review_date"].max().date()
-        date_range = st.date_input("Review date range", (min_date, max_date))
-        if isinstance(date_range, tuple) and len(date_range) != 2:
-            date_range = None
+    date_range = None
+    with col_date:
+        if df["review_date"].notna().any():
+            min_date = df["review_date"].min().date()
+            max_date = df["review_date"].max().date()
+            date_range = st.date_input("Review date range", (min_date, max_date))
+            if isinstance(date_range, tuple) and len(date_range) != 2:
+                date_range = None
 
-min_playtime = None
-with col_play:
-    if df["playtime_hours"].notna().any():
-        min_playtime = st.slider(
-            "Minimum playtime (hours)", 0.0, float(df["playtime_hours"].max()), 0.0
-        )
+    min_playtime = None
+    with col_play:
+        if df["playtime_hours"].notna().any():
+            min_playtime = st.slider(
+                "Minimum playtime (hours)", 0.0, float(df["playtime_hours"].max()), 0.0
+            )
 
 filtered_df = get_filtered_data(
     df,
@@ -81,29 +278,35 @@ filtered_df = get_filtered_data(
     min_playtime=min_playtime,
 )
 
-st.markdown(f"**{len(filtered_df):,}** reviews match current filters.")
+m1, m2, m3 = st.columns(3)
+m1.metric("Reviews loaded", f"{len(df):,}")
+m2.metric("Match your filters", f"{len(filtered_df):,}")
+m3.metric("Games in view", f"{filtered_df['app_name'].nunique():,}")
 
 # ---------------------------------------------------------------------------
 # Run analysis (next to the filters)
 # ---------------------------------------------------------------------------
 n_available = len(filtered_df)
 
-if n_available == 0:
-    st.warning("No reviews match the current filters — adjust filters above to enable analysis.")
-    sample_cap = 0
-    run_analysis = False
-    st.button("Run Sentiment Analysis", type="primary", disabled=True)
-elif n_available <= 20:
-    st.caption(f"Only {n_available} review(s) match filters — analyzing all of them.")
-    sample_cap = n_available
-    run_analysis = st.button("Run Sentiment Analysis", type="primary")
-else:
-    slider_max = min(500, n_available)
-    default_val = min(150, slider_max)
-    sample_cap = st.slider(
-        "Max reviews to analyze (controls API cost)", 20, slider_max, default_val
-    )
-    run_analysis = st.button("Run Sentiment Analysis", type="primary")
+with st.container(border=True):
+    st.subheader("Run analysis")
+
+    if n_available == 0:
+        st.warning("No reviews match the current filters — adjust filters above to enable analysis.")
+        sample_cap = 0
+        run_analysis = False
+        st.button("Run Sentiment Analysis", type="primary", disabled=True, use_container_width=True)
+    elif n_available <= 20:
+        st.caption(f"Only {n_available} review(s) match filters — analyzing all of them.")
+        sample_cap = n_available
+        run_analysis = st.button("Run Sentiment Analysis", type="primary", use_container_width=True)
+    else:
+        slider_max = min(500, n_available)
+        default_val = min(150, slider_max)
+        sample_cap = st.slider(
+            "Max reviews to analyze (controls API cost)", 20, slider_max, default_val
+        )
+        run_analysis = st.button("Run Sentiment Analysis", type="primary", use_container_width=True)
 
 if "analyzed_df" not in st.session_state:
     st.session_state.analyzed_df = None
@@ -138,45 +341,29 @@ with tab_overview:
     if preview_df.empty:
         st.info("No reviews to show. Adjust the filters above.")
     else:
-        cards_per_row = 3
-        records = preview_df.to_dict("records")
-
-        for i in range(0, len(records), cards_per_row):
-            cols = st.columns(cards_per_row)
-            for col, r in zip(cols, records[i:i + cards_per_row]):
-                with col:
-                    with st.container(border=True, height=220):
-                        # Recommendation badge (from the dataset's thumbs up/down)
-                        voted = str(r.get("voted_up")).strip().lower()
-                        if voted in ("true", "1"):
-                            badge = "👍 Recommended"
-                        elif voted in ("false", "0"):
-                            badge = "👎 Not recommended"
-                        else:
-                            badge = ""
-
-                        st.markdown(f"**{r.get('app_name', 'Unknown Game')}**")
-                        st.caption(" · ".join(x for x in [str(r.get("genre", "")), badge] if x))
-
-                        # Review text ("$" escaped so it isn't read as a math formula)
-                        st.markdown(str(r["review_text"]).replace("$", "\\$"))
-
-                        # Footer details
-                        details = []
-                        if pd.notna(r.get("review_date")):
-                            details.append(f"📅 {r['review_date'].strftime('%b %d, %Y')}")
-                        if pd.notna(r.get("playtime_hours")):
-                            details.append(f"⏱️ {float(r['playtime_hours']):,.1f} hrs")
-                        if pd.notna(r.get("helpful_votes")):
-                            details.append(f"🙌 {int(r['helpful_votes']):,} helpful")
-                        if details:
-                            st.caption("  ·  ".join(details))
+        st.markdown(
+            build_review_cards_html(preview_df.to_dict("records")),
+            unsafe_allow_html=True,
+        )
 
 with tab_viz:
     if st.session_state.analyzed_df is None:
         st.info("Run sentiment analysis above to see visualizations here.")
     else:
         adf = st.session_state.analyzed_df
+
+        # Quick sentiment summary tiles
+        sent_counts = adf["sentiment"].value_counts()
+        total_analyzed = max(len(adf), 1)
+        k1, k2, k3 = st.columns(3)
+        for tile, label, key in (
+            (k1, "😊 Positive", "positive"),
+            (k2, "😐 Neutral", "neutral"),
+            (k3, "😠 Negative", "negative"),
+        ):
+            n = int(sent_counts.get(key, 0))
+            tile.metric(label, f"{n:,} ({n / total_analyzed:.0%})")
+
         col1, col2 = st.columns(2)
 
         with col1:
@@ -185,19 +372,22 @@ with tab_viz:
             counts.columns = ["sentiment", "count"]
             fig = px.bar(
                 counts, x="sentiment", y="count", color="sentiment",
+                category_orders=SENTIMENT_ORDER,
                 color_discrete_map={"positive": "#2ecc71", "negative": "#e74c3c", "neutral": "#95a5a6"},
             )
-            st.plotly_chart(fig, use_container_width=True)
+            fig.update_layout(showlegend=False, xaxis_title="")
+            st.plotly_chart(style_fig(fig), use_container_width=True)
 
         with col2:
             st.subheader("Sentiment by Game")
             by_game = adf.groupby(["app_name", "sentiment"]).size().reset_index(name="count")
             fig2 = px.bar(
                 by_game, x="app_name", y="count", color="sentiment", barmode="stack",
+                category_orders=SENTIMENT_ORDER,
                 color_discrete_map={"positive": "#2ecc71", "negative": "#e74c3c", "neutral": "#95a5a6"},
             )
             fig2.update_layout(xaxis_title="", xaxis_tickangle=-30)
-            st.plotly_chart(fig2, use_container_width=True)
+            st.plotly_chart(style_fig(fig2), use_container_width=True)
 
         if adf["review_date"].notna().any():
             st.subheader("Sentiment Trend Over Time")
@@ -206,18 +396,22 @@ with tab_viz:
             trend_counts = trend.groupby(["month", "sentiment"]).size().reset_index(name="count")
             fig3 = px.line(
                 trend_counts, x="month", y="count", color="sentiment", markers=True,
+                category_orders=SENTIMENT_ORDER,
                 color_discrete_map={"positive": "#2ecc71", "negative": "#e74c3c", "neutral": "#95a5a6"},
             )
-            st.plotly_chart(fig3, use_container_width=True)
+            st.plotly_chart(style_fig(fig3, height=360), use_container_width=True)
 
         st.subheader("Top Extracted Keywords")
         kw_series = adf["keywords"].str.split(", ").explode().dropna()
         kw_series = kw_series[kw_series != ""]
         top_kw = kw_series.value_counts().head(15).reset_index()
         top_kw.columns = ["keyword", "count"]
-        fig4 = px.bar(top_kw, x="count", y="keyword", orientation="h")
-        fig4.update_layout(yaxis={"categoryorder": "total ascending"})
-        st.plotly_chart(fig4, use_container_width=True)
+        fig4 = px.bar(
+            top_kw, x="count", y="keyword", orientation="h",
+            color_discrete_sequence=["#0E9F9A"],
+        )
+        fig4.update_layout(yaxis={"categoryorder": "total ascending"}, yaxis_title="")
+        st.plotly_chart(style_fig(fig4, height=440), use_container_width=True)
 
         with st.expander("See analyzed reviews with sentiment + keywords"):
             st.dataframe(
@@ -274,5 +468,7 @@ with st.sidebar:
         st.session_state.chat_history.append({"role": "user", "content": question})
         st.session_state.chat_history.append({"role": "assistant", "content": answer})
 
-st.divider()
-st.caption("Built with Streamlit + Hugging Face for a GenAI dataset-analysis assignment.")
+st.markdown(
+    '<div class="gg-footer">Built with Streamlit + Hugging Face for a GenAI dataset-analysis assignment.</div>',
+    unsafe_allow_html=True,
+)
